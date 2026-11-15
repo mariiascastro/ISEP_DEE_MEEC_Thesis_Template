@@ -1,0 +1,18 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# TeXposit internals — exclude cache, allow AI events log and instructions
+.texposit/*
+!.texposit/ai-events.jsonl
+!.texposit/instructions.md
+
+# Compiled output
+output/
