@@ -249,6 +249,10 @@ Segundo \textcite{ Zhao2023}, usa a capacidade nominal como referência, mas out
 A integração em ampere-hora (método de integração da corrente ou método de contagem de Coulomb) estima o SoC da bateria através da carga e descarga acumuladas. Este é um do método mais fiável e permite estimar dinamicamente o SoC da bateria, logo é geralmente utilizado em aplicações reais \cite{ Zhao2023}:
 
 
+\[
+SoC = SoC_0 - \frac{1}{C_N} \int_0^t \eta I \, dt
+\]
+
 
 
 \section{Como Usar o Template}
