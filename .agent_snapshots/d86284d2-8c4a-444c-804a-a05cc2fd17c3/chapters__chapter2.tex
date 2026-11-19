@@ -1,0 +1,757 @@
+% Chapter 2
+
+\chapter{Revisão bibliográfica}	%The main chapter title
+\chaptermark{O \textit{Template}}	%Short version for page header. Comment if not needed
+\label{Chapter2}	%For referencing the chapter elsewhere, use \ref{Chapter2} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Papel das BESS}
+\label{sec:Ch2.1}
+
+A crescente integração de fontes renováveis na rede elétrica aumenta a necessidade de flexibilidade do sistema energético. Os Sistemas de Armazenamento de Energia (BESS, \textit{Battery Energy Storage System}) assumem um elemento fundamental na transição energética, pois permitem desfasar no tempo a produção e consumo, estabilizar a rede elétrica e aumentar o aproveitamento da energia proveniente de energias renováveis \cite{enel_bess} \cite{ Shamarova2022}. Hesse \cite{ Hesse2017} caracterizam este sistema como vantajoso no que toca à velocidade de resposta, eficiência, baixos valores de autodescarga e à estabilidade permitida através da construção modular \cite{ Hesse2017}.
+
+A evolução deste tipo de equipamentos tem reduzido os custos, que se tornam cada vez mais competitivos, e representa uma solução atrativa para diminuir o consumo e custo da energia proveniente da rede e tem contribuído para a diminuição ativa da descarbonização \cite{enel_bess} \cite{ Shamarova2022}. Apesar das vantagens da BESS, a literatura clarifica que estes sistemas raramente alcançam retornos económicos positivos sem incentivos financeiros, acumulação de receitas, estruturas tarifas favoráveis e sistemas complementares, como sistemas fotovoltaicos \cite{ Dratsas2022}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tecnologias de armazenamento }
+\label{sec:Ch2.1.1}
+
+As tecnologias de armazenamento de energia são, normalmente, classificadas de acordo com a forma como a energia é armazenada: mecânica, eletroquímica, eletromagnética, química e térmica \cite{ Balwani2021} \cite{Mahlia2014}.  A escolha da tecnologia para cada caso deve basear-se em critérios como as densidades de energia e de potência, a duração da descarga, a eficiência de ciclo completo, a vida útil, o tempo de resposta, o custo, o grau de maturidade e as restrições de localização \cite{Mahlia2014} \cite{Luo2015}. A Tabela~\ref{tab:comparacao_tecnologias_armazenamento} organiza, por tecnologia, os diferentes métodos de armazenamento de energia.
+
+
+
+\begin{table}[htbp]
+    \centering
+    \caption{Comparação das principais tecnologias de armazenamento de energia}
+    \label{tab:comparacao_tecnologias_armazenamento}
+
+    \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+    \setlength{\tabcolsep}{3pt}
+    \sloppy
+    
+    \begin{tabularx}{\textwidth}{
+        |>{\centering\arraybackslash}p{2.1cm}
+        |>{\centering\arraybackslash}p{1.8cm}
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X|}
+        
+        \hline
+        \textbf{Tecnologia} &
+        \textbf{Tipo} &
+        \textbf{Pontos fortes} &
+        \textbf{Limitações} &
+        \textbf{Aplicações adequadas} \\
+        \hline
+
+        Bombagem hidroelétrica (PHS) &
+        Mecânica &
+        Sistema mais implementado a nível mundial &
+        Restrições geográficas &
+        Armazenamento de grande escala \\
+        \hline
+
+        Ar comprimido (CAES) &
+        Mecânica &
+        -- &
+        Restrições de localização semelhantes às da PHS; eficiência de ciclo inferior &
+        Grande escala \\
+        \hline
+
+        Volantes de inércia (FESS) &
+        Mecânica &
+        Resposta muito rápida; elevado número de ciclos &
+        Duração de descarga curta &
+        Qualidade de energia e regulação de frequência \\
+        \hline
+
+        Supercon\-densadores &
+        Eletromag\-nética &
+        Elevada densidade de potência &
+        Descarga curta; autodescarga significativa &
+        Resposta rápida: regulação de frequência e apoio à tensão \\
+        \hline
+
+        SMES &
+        Eletromag\-nética &
+        Resposta rápida &
+        -- &
+        Resposta rápida: regulação de frequência e apoio à tensão \\
+        \hline
+
+        Hidrogénio e células de combustível &
+        Química &
+        Armazenamento sazonal ou de longa duração &
+        Eficiência global baixa; sistemas complexos &
+        Longa duração \\
+        \hline
+
+        Armazenamento térmico &
+        Térmica &
+        Armazenamento sazonal ou de longa duração &
+        Eficiência global baixa; sistemas complexos &
+        Longa duração \\
+        \hline
+
+        Baterias (BESS) &
+        Eletroquí\-mica &
+        Elevada densidade de energia; resposta rápida; modulares e escaláveis; instalação junto ao ponto de consumo; maturidade tecnológica &
+        Custo por kWh e degradação &
+        Flutuações de potência a curto prazo; deslocamento temporal de energia \\
+        \hline
+
+    \end{tabularx}
+\end{table}
+
+Os sistemas mecânicos incluem o armazenamento hidroelétricas por bombeamento (PHS, \textit{Pumped Hydro Storage}), que se trata do sistema mais implementado a nível mundial, mas apresenta restrições geográficas. Existe o armazenamento de energia por ar comprimido (CAES, \textit{Compressed Air Energy Storage}), apresenta limitações relacionadas com a localização geográfica semelhantes, e apresenta uma eficiência de ciclo inferior \cite{Mahlia2014}\cite{Salkuti2024}. Por outro lado, os volantes de inércia (FESS, \textit{Flywheel Energy Systems})oferecem uma resposta muito rápida e um elevado número de ciclos de carga e descarga, mas a duração de descarga é curta, assim sendo, são mais adequados para serviços de qualidade de energia e regulação de frequência \cite{ Xiaojun2021}.
+
+Comparando as tecnologias eletromagnéticas, nomeadamente os supercondensadores e os sistemas de armazenamento de energia magnética supercondutora (SMES, \textit{Superconducting Magnetic Energy Storage}). Os supercondensadores apresentam uma elevada densidade de potência, mas uma duração de descarga mais curta e uma autodescarga significativa. Estes dois sistemas estão mais associados com aplicações de resposta rápida, como regulação de frequência e apoio à tensão. Por outro lado, o armazenamento de hidrogénio com pilhas de combustão e o armazenamento térmico são mais adequados para o armazenamento sazonal ou de longa duração, mas apresentam uma eficiência global mais baixa e uma complexidade dos sistemas mais elevada \cite{Mahlia2014}\cite{Salkuti2024}.
+
+Para o armazenamento eletroquímico, como as BESS, apresentam uma elevada densidade energética e resposta rápida, o que se adequa a um cenário com flutuações de potência a curto prazo. Este tipo de sistemas também apresentam uma composição modular e escalável, podem ser instalados perto do ponto de consumo sem requisitos específicos, apresentam uma maior maturidade tecnológica e permitem uma maior redução dos custos entre as opções não mecânicas \cite{Salkuti2024}\cite{ Areola2025}. 
+
+Considerando a escala e os objetivos deste projeto, nomeadamente o armazenamento do excedente fotovoltaico para utilização num período mais vantajoso, e consequentemente a diminuição de importações da rede, a literatura sustenta a escolha da BESS. As PHS e o CAES não são adequadas pelas restrições de escala e de localização. Os volantes de inércia e os supercondenadores não proporcionam a duração de descarga necessária. O armazenamento térmico e o hidrogénio acrescentam complexidade e reduzem a eficiência da aplicação. Estes argumentos baseados na literatura. As BESS, combinam facilidade de instalação em paralelo com sistemas fotovoltaicos, flexibilidade, tempos de resposta e escalabilidade. 
+
+\subsection{Químicas de iões de lítio}
+\label{sec:Ch2.1.2}
+
+Dentro das BESS eletroquímicas, a escolha da química da célula também condiciona o desempenho e o envelhecimento. \textcite{ Hesse2017} apresentam quatro químicas diferentes que são utilizadas frequentemente em aplicações, óxido níquel-manganês-cobalto (NMC, \textit{Nickel-Manganese-Cobalt}) óxido de níquel cobalto alumínio, (NCA, \textit{Nickel-Cobalt-Aluminum-Oxide}) fosfato de lítio ferro (LFP, \textit{Lithium-Iron-Phosphate}), e uma alternativa com ânodo de titânio de lítio (LTO, \textit{Lithium- Titanate-Oxide}). Para sistemas estacionários, a densidade energética e a potência de pico são menos importantes do que aplicações automóveis. São mais importantes a energia contida, a segurança e a degradação \cite{ Hesse2017}. A tabela 2, apresenta as características principais das químicas de iões de lítio. 
+
+
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{
+|>{\centering\arraybackslash}p{4cm}
+|>{\centering\arraybackslash}X|}
+\hline
+\textbf{Química} & \textbf{Características principais} \\
+\hline
+
+NMC (níquel-manganês-cobalto) &
+Equilíbrio entre segurança, durabilidade e densidade de energia, com custo de material competitivo. Química mais usada em aplicações automóveis e portáteis. \\
+\hline
+
+NCA (níquel-cobalto-alumínio) &
+Densidade de energia gravimétrica muito elevada (mais de 250 Wh/kg em células de qualidade automóvel). Adequada sobretudo em topologias com várias células em paralelo. \\
+\hline
+
+LFP (fosfato de ferro e lítio) &
+Tensão de célula inferior, com cerca de 20\% menos energia específica. Apresenta segurança e menos envelhecimento relativo. Tem curva de tensão em circuito aberto muito plana (variação até 100 mV entre 10 e 90\% de SoC), o que dificulta a estimação do SoC, o balanceamento e o controlo pelo EMS. \\
+\hline
+
+LTO (ânodo de titanato de lítio) &
+Vida em ciclos e capacidade de potência elevada, maior segurança e menor risco de deposição de lítio. Apresenta menor tensão e densidade de energia, custando por kWh mais elevado e poucas células comerciais. \\
+\hline
+
+\end{tabularx}
+\caption{Comparação das principais químicas de baterias de iões de lítio.}
+\label{tab:quimicas_baterias}
+\end{table}
+
+A partir dos dados apresentados no artigo \cite{ Hesse2017} baseado em projetos reais, mais de 75\% dos projetos com PV-BESS usam tecnologias NMC, NCA ou LFP. Apesar disto, os valores e opiniões quanto à tecnologia que deve ser escolhida diferem bastante devido à grande variedade de químicas e os procedimentos de medição escolhidos \cite{ Hesse2017}.  
+
+
+\subsection{BESS e princípios de funcionamento}
+\label{sec:Ch2.1.3}
+
+Os sistemas de armazenamento de energia em baterias são instalações nas quais as baterias, geralmente agregadas, armazenam a eletricidade proveniente da instalação \cite{enel_bess}. Funcionam através de uma hierarquia em camadas de armazenamento eletroquímico, eletrónica de potência e hardware de controlo em níveis. \textcite{ Hesse2017} agrupa os componentes em três blocos que são os componentes das baterias, componentes de ligação à rede e componentes de operação do sistema.
+
+O bloco de armazenamento começa nas células. Estas são ligadas em paralelo, para aumentar a capacidade, e em série, para somar tensões. Nos BESS estacionários, grupos de uma ou várias células em paralelo ligam-se em série até uma tensão de módulo habitualmente não superior a 60 V, e vários módulos são depois associados em série-paralelo, em racks, para atingir a capacidade e a tensão exigidas pela eletrónica de potência \cite{ KWABENAAKYEREMEH2026}\cite{ Khalid2021}\cite{ Hesse2017}. O correto funcionamento do BESS exige todos os componentes seguintes em operação \cite{Tycorun2025 }:
+-O conjunto de baterias que, são montadas em módulos e racks, em série e em paralelo, como descrito anteriormente.
+
+- O Sistema de Gestão de Bateria (BMS, \textit{BMS- Battery Managment System}) recolhe continuamente dados de telemetria relativos à proteção das células e racks de diferenças de tensão, corrente e temperatura. O BMS também é responsável pelo balanceamento de células e proteger a bateria contra sobrecarga, descargas excessivas, sobrecorrentes, sobretemperatura, ou seja, todo o tipo de monitorização a nível da bateria. Esta monitorização contínua garante o equilíbrio das células e calcula o estado da carga (SoC, \textit{State of Charge}) e o estado de saúde (SoH, \textit{State of Health}) \cite{ KWABENAAKYEREMEH2026}\cite{ Khalid2021}\cite{ MARCOSTECCA2020}. Este sistema também é responsável pelo gerenciamento da carga e descarga da bateria \cite{Tycorun2025 }.  A investigação em BMS é sobretudo dirigida ao setor automóvel, embora muitos conceitos sejam transferíveis \cite{ Hesse2017}. 
+
+-O sistema de Gerenciamento Térmico (TMS, \textit{Thermal Management System}) mantém a temperatura na gama de funcionamento. Trata-se de um sistema distinto do BMS. 
+
+-O sistema de conversão de potência (PCS, \textit{Power Conversion System}) é um conversor bidirecional que, na carga, converte a corrente alternada (CA) da instalação, venha da rede ou de fontes renováveis, em corrente continua (CC) para armazenamento eletroquímico e, na descarga, funciona no sentido inverso, fornecendo energia CA \cite{ KWABENAAKYEREMEH2026}\cite{ Khalid2021}\cite{Tycorun2025 }. As perdas do PCS entram na eficiência do sistema medido em CA. 
+
+-O transformador que adapta à tensão do sistema à do ponto de ligação à rede, mas é opcional quando os níveis de tensão coincidem \cite{Tycorun2025 }. 
+
+-O Sistema de Gestão de Energia (EMS, \textit{Energy Management System}) é responsável pelo controlo do fluxo de potência a nível da instalação elétrica. Através de ferramentas de software e hardware otimiza a distribuição de energia, processa os dados fornecidos pela BMS e opera de acordo com os fatores apresentados pela instalação \cite{ MARCOSTECCA2020}.
+
+-Os equipamentos auxiliares incluem o sistema de aquecimento, ventilação e ar condicionado (HVAC, \textit{Heating Ventilation, and Air Conditioning}), o sistema de controlo de supervisão e aquisição de dados (SCADA, \textit{Supervisory Control and Data Acquisition}), interruptores motorizados, sistemas de alarme de incêndio e sistemas de controlo e monitorização. Estes equipamentos garantem as condições de funcionamento adequadas para a BESS funcionar corretamente. O controlador lógico programável (PLC, \textit{Programmable Logic Controller}) dedica-se à coordenação do BESS e à regulação precisa dos fluxos de energia com a rede elétrica.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{REF59_3.png}
+    \caption{Componentes e estrutura de um sistema BESS de escala de serviço.}
+    \label{fig:bess_estrutura}
+\end{figure}
+
+
+\subsection{Topologias de acoplamento PV-BESS}
+\label{sec:Ch2.1.4}
+
+Quando a bateria está associada a um sistema fotovoltaico, a topologia de ligação pode influenciar a eficiência e o custo. \textcite{ Hesse2017} descreve três soluções habituais e, sistemas residenciais: 
+-Acoplamento em CA: a bateria liga-se, através de um conversor CC/CC, ao seu próprio inversor/retificador, e o inversor fotovoltaico mantém-se independente. É mais fácil de instalar num sistema fotovoltaico já existente. 
+-Acoplamento em barramento CC: o conversor da bateria liga-se ao barramento CC entre o rastreamento do ponto de máxima potência (MPPT, \textit{Maximum Power Point Tracking}) e o inversor da rede. 
+-Acoplamento pelo MPPT (acoplamento ao gerador): a bateria liga-se através do conversor MPPT. Exige comunicação rápida e precisa entre a bateria e a ligação à rede.
+As duas soluções CC, normalmente, não se adaptam a sistemas exigentes, mas podem ser mais económicas em instalações novas, por precisarem apenas de um conversor CC/CA \cite{ Hesse2017}.
+
+\subsection{Gestão Térmica }
+\label{sec:Ch2.1.5}
+
+A temperatura é um dos fatores que apresentam uma grande influência no funcionamento e envelhecimento das células. Diferentes temperaturas dentro de um pack pode causar correntes desequilibradas e maior envelhecimento \cite{ Hesse2017}. Distinguem-se dois níveis, a gestão térmica da bateria (B-TMS, \textit{Battery Thermal Management System}) que controla a temperatura das células segundo valores absolutos, e a gestão térmica do sistema (S-TMS, \textit{System Thermal Management System}) que controla as condições do compartimento e atua como uma barreira entre o ambiente e sistema. Num contexto residencial PV-BESS, maioritariamente, é apenas usado arrefecimento passivo por ar, enquanto nos de maior escala, a base é o ar condicionado ativo \cite{ Hesse2017}. O S-TMS funciona durante todo o ano e, se se encontrar mal ajustado, pode afetar bastante o consumo energético do sistema. 
+
+\subsection{Parâmetros e métricas da BESS}
+\label{sec:Ch2.1.6}
+
+\subsubsection{Capacidade e desempenho}
+\label{sec:Ch2.1.6.1}
+
+\section{Como Usar o Template}
+\label{sec:Ch2.2}
+
+O \textit{template} encontra-se disponível e pronto a ser utilizado no Moodle do \ac{meec} (em ficheiro ZIP) e no \href{https://github.com/}{GitHub}. Pode ser utilizado diretamente num editor \textit{online} (e.g., Overleaf) ou compilado localmente, desde que estejam instalados uma distribuição \TeX{} atualizada e os pacotes necessários.
+Em qualquer dos casos, antes de iniciar a escrita da dissertação, deverá familiarizar-se com a estrutura de diretórios e com os ficheiros fornecidos.
+
+\subsection{Diretórios}
+
+Os principais diretórios são os seguintes:
+
+\begin{itemize}
+     \item \textbf{chapters} -- contém os capítulos e os anexos da dissertação. Recomenda-se que cada capítulo ou anexo seja escrito num ficheiro \file{.tex} autónomo. Embora o número e a designação dos capítulos dependam do trabalho desenvolvido, deverão existir sempre um capítulo de ``Introdução'' e um capítulo de ``Conclusões''.
+
+     \item \textbf{figures} -- contém as figuras utilizadas na dissertação. Recomenda-se uma nomenclatura coerente que permita associar facilmente cada ficheiro ao capítulo ou secção onde é utilizado.
+
+     \item \textbf{front} -- contém os ficheiros para os elementos iniciais da dissertação: glossário, acrónimos, símbolos, dedicatória, agradecimentos, \textit{abstract} e listas iniciais. Poderá optar por não usar algumas destas secções caso não sejam relevantes para o seu documento.
+\end{itemize}
+
+\subsection{Ficheiros principais}
+
+Além dos ficheiros criados automaticamente durante a compilação, o \textit{template} inclui os seguintes ficheiros relevantes:
+
+\begin{itemize}
+\item \textbf{main.tex} -- este é o ficheiro mais importante para a definição do seu documento. O código deste ficheiro define a estrutura e contém as instruções que levam o \LaTeX{} a gerar o PDF final. Tenha em consideração os comentários apresentados no próprio ficheiro por forma a saber o que faz cada linha/secção de código e de como o \textit{template} pode ser adaptado ao seu caso. É este ficheiro que deverá editar para dar como iniciada a elaboração da sua dissertação.
+
+\item \textbf{DEEclass.cls} -- classe do documento que define o formato institucional. Não deve ser editado pelo estudante.
+
+\item \textbf{preamble.tex} -- ficheiro destinado exclusivamente a \glspl{pack}, configurações e macros adicionais necessários ao documento. Desta forma evita-se que o preâmbulo do ficheiro principal \file{main.tex} fique demasiado extenso. 
+
+\item \textbf{sampleRefs.bib} -- base de dados bibliográfica usada pelo Bib\LaTeX{}. Pode mudar o nome do ficheiro desde que essa alteração também seja feita no comando \verb|\addbibresource| do ficheiro \file{main.tex}. A lista bibliográfica e as citações são apresentada no PDF final segundo a configuração institucional.
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Configuração do ficheiro \file{main.tex}}
+\label{subsec:Ch2.2.3}
+
+A elaboração do seu documento deverá começar com a edição do ficheiro \file{main.tex}, que se encontra dividido em blocos claramente identificados. Para iniciar um novo documento, deverá editar apenas os campos de configuração e as inclusões de capítulos e anexos.
+
+\subsubsection*{Definições principais}
+
+Na secção \code{MAIN SETTINGS}, selecione uma das opções correspondentes ao ramo do \ac{meec}:
+
+\begin{itemize}
+\item \code{MEECAS} (\acs{meec} Automação e Sistemas)
+\item \code{MEECSA} (\acs{meec} Sistemas Autónomos)
+\item \code{MEECPI} (\acs{meec} Sistemas e Planeamento Industrial)
+\item \code{MEECTE} (\acs{meec} Telecomunicações)
+\end{itemize}
+
+Selecione também o idioma principal do documento: 
+\begin{itemize}
+\item \code{portuguese} 
+\item \code{english}
+\end{itemize}
+
+Quando o idioma selecionado é o português, o inglês é usado como segundo idioma nos elementos bilingues. Quando o idioma principal é o inglês, aplica-se a situação inversa.
+
+As opções adicionais da DEEclass são:
+
+\begin{itemize}
+    \item \code{draft} -- modo de rascunho, útil durante a preparação do documento para tempos de compilação mais curtos;
+    \item \code{finalversion} -- versão final, na qual são apresentados os elementos do júri das provas.
+\end{itemize}
+
+\subsubsection*{Dados da dissertação}
+
+Na secção \code{DISSERTATION INFORMATION}, preencha obrigatoriamente:
+
+\begin{itemize}
+\item o título da dissertação;
+\item o nome completo do candidato;
+\item o número de estudante;
+\item o nome e o endereço de correio eletrónico do orientador do \ac{isep}.
+\end{itemize}
+
+A data apresentada nas páginas iniciais do PDF gerado corresponde, por omissão, à data de compilação. Para fixar uma data específica, use o comando \verb|\subdate| no formato ISO \code{AAAA-MM-DD}.
+
+O coorientador, a empresa e o orientador da empresa são opcionais. Quando não forem aplicáveis, os respetivos comandos devem permanecer comentados. A informação da empresa deve ser tratada de forma coerente: se for indicado o nome da empresa, deverá também ser indicado o orientador da empresa.
+
+Os comandos relativos ao júri são necessários quando a opção \code{finalversion} da classe está ativa:
+\begin{verbatim}
+\committepresident{Nome do presidente, instituição}
+\committeememberone{Nome do vogal, instituição}
+\committeemembertwo{Nome do vogal, instituição}
+\end{verbatim}
+
+Se algum dos campos obrigatórios estiver em falta ou vazio, a compilação apresenta uma mensagem de erro que identifica o campo a corrigir. Esta validação pretende evitar a geração de versões finais com dados incompletos.
+
+\subsubsection*{Declaração de integridade}
+
+A declaração de integridade é gerada automaticamente pela classe do documento e incluída nas páginas iniciais do documento. O texto da declaração não deve ser removido ou editado manualmente e incorpora automaticamente: o nome e número do candidato, data de submissão e a indicação sobre a utilização, ou não, de ferramentas de inteligência artificial generativa (ver subsecção seguinte).
+
+A responsabilidade pela veracidade da declaração e por todo o conteúdo apresentado na dissertação é exclusivamente do autor.
+
+\subsubsection*{Declaração de uso de inteligência artificial generativa}
+\label{subsec:ai-template}
+
+Na secção \code{AI USAGE}, é obrigatório declarar se foram utilizadas ferramentas de inteligência artificial generativa:
+\begin{verbatim}
+\AIusage{no}
+\end{verbatim}
+ou
+\begin{verbatim}
+\AIusage{yes}
+\end{verbatim}
+
+Apenas os valores \code{yes} e \code{no} são aceites. Quando é usado \verb|\AIusage{yes}|, tornam-se obrigatórios três elementos adicionais:
+\begin{enumerate}
+    \item a identificação das ferramentas utilizadas;
+    \item a seleção das formas de apoio prestado pela inteligência artificial;
+    \item uma descrição da utilização de cada ferramenta.
+\end{enumerate}
+
+As ferramentas são indicadas através do comando \verb|\AItools| na forma de lista separada por vírgulas. Por exemplo:
+\begin{verbatim}
+\AItools{OpenAI ChatGPT, Microsoft Copilot}
+\end{verbatim}
+
+As formas de apoio são selecionadas através do comando \verb|\AIaids|. Os identificadores disponíveis são:
+
+\begin{description}[
+  leftmargin=4.2cm,
+  labelwidth=3.8cm,
+  labelsep=0.4cm,
+  style=multiline
+]
+    \item[\code{brainstorming}] geração e exploração inicial de ideias;
+    \item[\code{literature-search}] apoio à pesquisa bibliográfica;
+    \item[\code{translation}] tradução de texto;
+    \item[\code{summarization}] resumo ou síntese de conteúdos;
+    \item[\code{text-generation}] geração de texto;
+    \item[\code{text-review}] revisão linguística ou estilística;
+    \item[\code{code-generation}] geração ou apoio à programação;
+    \item[\code{visualization}] produção ou apoio à criação de elementos visuais;
+    \item[\code{data-analysis}] apoio à análise de dados;
+    \item[\code{other}] outro tipo de utilização não incluído nas categorias
+    anteriores.
+\end{description}
+
+Considere o seguinte exemplo de uso do comando \verb|\AIaids|:
+\begin{verbatim}
+\AIaids{
+  brainstorming,
+  literature-search,
+  text-review,
+  code-generation
+}
+\end{verbatim}
+
+A descrição da utilização é escrita no ambiente \code{AItoolsdescription}. Esta deve ser objetiva, específica e suficientemente clara para permitir identificar a ferramenta, onde esta foi utilizada (por exemplo, capítulo, secção, figura ou em toda a dissertação), a finalidade da utilização e, quando aplicável, a forma como o resultado produzido foi revisto ou validado. Considere os seguintes exemplos:
+
+\begin{verbatim}
+\begin{AItoolsdescription}
+Em toda a dissertação foram utilizadas as ferramentas ChatGPT e
+Copilot para apoio à revisão linguística e melhoria da clareza
+do texto.
+
+No desenvolvimento do código MATLAB descrito no Capítulo 4 foi
+usado o ChatGPT para gerar funções auxiliares e apoiar a
+visualização gráfica dos resultados, sendo o resultado as
+Figuras 3.3 e 3.7.
+
+A ferramenta Copilot foi utilizada nas Secções 2.2 e 2.3
+e na discussão dos resultados da Secção 5.2, para resumir e
+comparar informação proveniente das fontes bibliográficas
+previamente selecionadas pelo autor.
+\end{AItoolsdescription}
+\end{verbatim}
+
+Quando a utilização de inteligência artificial é declarada, a classe gera automaticamente o anexo intitulado ``Declaração de Uso de Inteligência Artificial Generativa''. Este anexo inclui a informação declarada através dos comandos \verb|\AItools|, \verb|\AIaids| e ambiente \code{AItoolsdescription}.
+
+A declaração do uso de inteligência artificial não transfere para as ferramentas usadas qualquer responsabilidade sobre o trabalho submetido a provas. Deve sempre verificar, corrigir e validar criticamente todo o conteúdo, código, análise, tradução ou referência obtidos com esse apoio.
+
+\subsubsection*{Elementos iniciais e listas definidas pelo utilizador}
+
+Na secção \code{USER DEFINED FRONTMATTER}, são carregadas as definições do glossário, acrónimos e símbolos. Os respetivos conteúdos são editados nos seguintes ficheiros:
+\begin{itemize}
+    \item \path{/front/0_glossary.tex} -- termos do glossário;
+    \item \path{/front/0_acronyms.tex} -- acrónimos;
+    \item \path{/front/0_symbols.tex} -- símbolos.
+\end{itemize}
+
+A dedicatória e os agradecimentos são opcionais. Para os incluir, edite os ficheiros correspondentes (\verb|/front/1_dedicatory.tex| e \verb|/front/2_acknowledgements.tex|) e mantenha ativos os comandos:
+\begin{verbatim}
+\IncludeDedication
+\IncludeAcknowledgements
+\end{verbatim}
+
+Para omitir uma destas páginas, comente apenas o respetivo comando. Adicionalmente, o resumo/\textit{abstract} e as listas iniciais são carregados automaticamente pela classe:
+\begin{itemize}
+    \item \path{/front/3_abstract.tex} -- editar este ficheiro para introduzir o resumo da dissertação e as palavras-chave, em dois idiomas;
+    \item \path{/front/4_frontmatterlists.tex} -- seleção das listas a apresentar no documento final, como a lista de figuras, tabelas, listagens, algoritmos, glossário, acrónimos e símbolos. Por exemplo, se na sua dissertação não fizer uso do glossário, basta comentar a correspondente linha no ficheiro \path{/front/4_frontmatterlists.tex}.
+\end{itemize}
+
+ 
+\subsubsection*{Compilação e ficheiros auxiliares}
+
+Quando são usados Bib\LaTeX{}, glossários, acrónimos ou símbolos, o editor que está a usar para elaborar o seu documento tem também que executar as ferramentas auxiliares correspondentes, nomeadamente
+\code{biber} e \code{makeglossaries}. Assim, depois de alterações estruturais importantes, pode ser necessário recompilar o documento duas ou mais vezes para atualizar referências cruzadas, índice, numeração, listas e marcadores do PDF. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Formatos e Regras}
+\label{sec:Ch2.3}
+
+Uma das coisas mais importantes (e mais difíceis) de manter num documento longo como uma dissertação é a consistência. Assim, usar as seguintes regras e convenções permite produzir um documento técnicamente consistente que segue as regras definidas institucionalmente. Use o código fornecido neste ficheiro como base para a introdução das suas figuras, tabelas e restantes elementos. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Glossário, acrónimos e símbolos}
+
+Para ajudar o candidato a gerir as listas de termos específicos (\gls{gloss}), acrónimos e símbolos, o \textit{template} faz uso do \textit{package} \verb|glossaries|. Este permite, por exemplo, a ordenação alfabética das listas mencionadas e também que os acrónimos sejam descritos pelo menos uma vez no texto. As listas de termos, acrónimos e símbolos são definidas nos ficheiros mencionados na Subsecção~\ref{subsec:Ch2.2.3}. Tenha em consideração a informação presente nos comentários e os exemplos fornecidos, e de forma adicional na documentação do \gls{pack} disponível no endereço \url{ctan.org/pkg/glossaries} ou em \url{en.wikibooks.org/wiki/LaTeX/Glossary}.
+
+No documento, para introduzir os termos definidos no glossário use o comando \verb|\gls{<tag>}|, onde \verb|<tag>| se refere ao identificador do termo definido no ficheiro \verb|0_glossary.tex|. O \textit{package} \verb|glossaries| disponibiliza comandos adicionais que permitem introduzir variações do termo originalmente definido, para tal consulte a documentação.
+
+Para introduzir acrónimos ao longo do texto, o uso mais comum será através do comando \verb|\ac{<tag>}|, onde \verb|<tag>| se refere ao identificador do acrónimo definido no ficheiro \verb|0_acronyms.tex|. A primeira vez que o comando for usado é introduzida a versão completa (e.g., \ac{api}), e nas seguintes apenas será apresentado o acrónimo (e.g., \ac{api}). A Tabela~\ref{tab:acros} resume os principais comandos a ter em consideração. 
+
+\begin{table}[htb]
+	\caption{Principais comandos para introduzir acrónimos.}
+	\label{tab:acros}
+	\centering
+	\begin{tabular}{l l l}
+	\toprule
+	\tabhead{Comando} & \tabhead{} & \tabhead{Resultado} \\
+	\midrule
+		\verb|\ac{usb}| & primeiro uso & \ac{usb}\\
+		\verb|\ac{usb}| & repetição do comando & \ac{usb}\\
+		\verb|\acl{usb}| & força nome completo & \acl{usb}\\
+		\verb|\acs{usb}| & força acrónimo & \acs{usb}\\
+		\verb|\acf{usb}| & força versão completa & \acf{usb}\\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+Adicionalmente, para que um termo ou acrónimo seja apresentado na respetiva lista do documento final, terá que os usar pelo menos uma vez ao longo do texto. O mesmo não se aplica aos símbolos definidos em \verb|front/0_symbols.tex|.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Referências}
+
+O Bib\LaTeX{} é usado para formatar as referências bibliográficas e inserir citações como esta \cite{Gupta97} através do comando \verb|\cite{<Bibtexkey>}|. Alternativamente, para mencionar explicitamente o nome do(s) autor(es) na frase \textcite{Delorme1995}, usa-se o comando \verb|\textcite{<Bibtexkey>}|. As opções adotadas para a \verb|DEEclass| fazem com que as citações no texto sejam apresentadas como números entre parênteses retos. Citações múltiplas são separadas por vírgulas (e.g., \cite{Lipsum2008,Li2000,Candy1992}). Na correspondente secção da dissertação, as referências são ordenadas pela ordem de citação. 
+
+Considere que as citações \cite{W3C2005,ATmega128A2019} devem ser colocadas antes dos sinais de pontuação \cite{Candy1992}, caso haja, como uma vírgula ou um ponto final \cite{IEA2024}. O mesmo se aplica a notas de rodapé\footnote{Como esta nota de rodapé, aqui em baixo.}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Listas}
+
+Listas não numeradas são produzidas pelo ambiente \code{itemize}. Cada entrada da lista deve ser precedida pela sequência de controlo \code{\textbackslash item}. Por outro lado, as listas ordenadas são geradas pelo ambiente \code{enumerate} e cada entrada também deve ser precedida de \code{\textbackslash item}, que irá gerar automaticamente o rótulo dessa entrada. Os dois ambientes podem ser usados de forma encadeada.
+
+\begin{enumerate}
+   \item Primeiro nível lista ordenada
+   \item Primeiro nível lista ordenada
+   \begin{itemize}
+     \item Segundo nível lista não ordenada
+     \begin{itemize}
+       \item Terceiro nível lista não ordenada
+     \end{itemize}      
+     \item Segundo nível lista não ordenada
+     \begin{enumerate}
+       \item Terceiro nível lista ordenada
+       \item Terceiro nível lista ordenada
+     \end{enumerate}    
+   \end{itemize}
+   \item Primeiro nível lista ordenada   
+\end{enumerate} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Figuras}
+
+É desejável que a sua dissertação inclua figuras em quantidade e qualidade por forma a ilustrar as ideias que pretende transmitir. Todos os ficheiros de figuras devem ser colocados no diretório \path{/figures}. Para inserir as figuras no seu documento deve, regra geral, usar o código:
+
+\begin{verbatim}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.8]{cap2_fig1.eps}
+	\caption{Legenda com citação \parencite{Lipsum2008}.}
+	\label{fig:exemplo1}
+\end{figure}
+\end{verbatim}
+
+Este código produz a Figura~\ref{fig:exemplo1}. As figuras podem ser redimensionadas de uma forma absoluta através da opção \code{scale}, ou de forma relativa, e.g., à largura da área de texto da forma: \path{\includegraphics[width=0.5\textwidth]{cap2_fig1.eps}}. Se necessário pode também recorrer a sub-figuras (ver código deste ficheiro), como demonstrado pela Figura~\ref{fig:exemplo2} que contém as sub-figuras~\ref{fig:subfigA} e~\ref{fig:subfigB}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.8]{cap2_fig1.eps}
+	\caption{Legenda com citação \parencite{Lipsum2008}.}
+	\label{fig:exemplo1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subcaptionbox{Uma sub-figura\label{fig:subfigA}}{\includegraphics[width=0.45\linewidth]{cap2_fig1.eps}}
+%  \hfill
+  \subcaptionbox{\label{fig:subfigB}}{\includegraphics[width=0.45\linewidth]{cap2_fig1.eps}}
+  \caption[Uma figura com duas sub-figuras.]{Uma figura com duas sub-figuras: (a) com legenda e (b) sem legenda.}
+  \label{fig:exemplo2}
+\end{figure}
+
+Tenha em consideração que nem sempre as figuras irão aparecer no ponto onde escreveu o código, dado que o posicionamento depende do espaço disponível na página. Posicionar as figuras é trabalho para o \LaTeX{} e por isso só se deve preocupar em fazer as imagens, de preferência em formato vetorial (e.g., EPS, PDF). O \LaTeX{} por omissão aceita os formatos PDF, JPG e PNG. As figuras devem ser sempre referidas no texto e devem também ter sempre uma legenda, definida através do comando \verb|\caption{}|. Não esquecer que quando uma figura é obtida de uma referência bibliográfica, i.e., não é da sua autoria, esse facto deve ser mencionado (ver legenda da Figura~\ref{fig:exemplo1}).
+
+Este \textit{template} disponibiliza o comando adicional \verb|\inlinegraphics| que permite inserir figuras na linha de texto. Este é um exemplo \inlinegraphics{Inlinefigureexample.png}. Por vezes uma figura necessita de ser apresentada em \textit{landscape}, onde a Figura~\ref{fig:exemplo3} é um exemplo desta forma de apresentação.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Tabelas}
+
+As tabelas são uma forma importante de apresentação de informação. A Tabela~\ref{tab:basictable} ilustra a aplicação das principais diretrizes a ter em consideração na construção de tabelas:
+
+\begin{enumerate}
+   \item Não usar linhas verticais.
+   \item A legenda é colocada antes da tabela.
+   \item Usar as macros \verb|\toprule|, \verb|\midrule| e \verb|\bottomrule| para criar as linhas horizontais, respetivamente, do topo, meio e fundo da tabela.
+\end{enumerate} 
+
+Considere o seguinte código usado para criar a Tabela~\ref{tab:basictable}:
+
+{\small
+\begin{verbatim}
+\begin{table}
+\caption{Exemplo de uma tabela simples em \LaTeX{}.}
+\label{tab:basictable}
+\centering
+	\begin{tabular}{l c c}
+	\toprule
+	\tabhead{Coluna 1} & \tabhead{Coluna 2} & \tabhead{Coluna 3} \\
+	\midrule
+	Linha 1 & 0.2 & 0.8\\
+	Linha 2 & 0.17 & 0.7\\
+	Linha 3 & 0.24 & 0.75\\
+	Linha 4 & 0.68 & 0.3\\
+	\bottomrule
+\end{tabular}
+\end{table}
+\end{verbatim}
+}
+
+\begin{table}[htb]
+	\caption{Exemplo de uma tabela simples em \LaTeX{}.}
+	\label{tab:basictable}
+	\centering
+	\begin{tabular}{l c c}
+	\toprule
+	\tabhead{Coluna 1} & \tabhead{Coluna 2} & \tabhead{Coluna 3} \\
+	\midrule
+		Linha 1 & 0.2 & 0.8\\
+		Linha 2 & 0.17 & 0.7\\
+		Linha 3 & 0.24 & 0.75\\
+		Linha 4 & 0.68 & 0.3\\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+%%%
+\begin{landscape}
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=1.8]{cap2_fig1.eps}
+		\caption{Uma figura em \textit{landscape}.}
+		\label{fig:exemplo3}
+	\end{figure}
+\end{landscape}
+%%%
+
+Para tabelas com uma estrutura mais complexa podem ser utilizados os comandos \verb|\multirow| e \verb|\multicolumn|. O primeiro permite que uma célula ocupe várias linhas, enquanto o segundo permite agrupar várias colunas sob uma única célula. A Tabela~\ref{tab:multitable} apresenta um exemplo da utilização combinada destes dois comandos.
+
+\begin{table}[htb]
+    \caption{Exemplo de utilização de \texttt{multirow} e
+    \texttt{multicolumn}.}
+    \label{tab:multitable}
+    \centering
+    \begin{tabular}{l l c c}
+        \toprule
+        \multirow{2}{*}{\tabhead{Sistema}} & \multirow{2}{*}{\tabhead{Cenário}} & \multicolumn{2}{c}{\tabhead{Resultados}}\\
+        \cmidrule(lr){3-4} & & \tabhead{Custo (\$)} & \tabhead{Perdas (kW)}\\
+        \midrule
+        \multirow{2}{*}{Sistema A} & Caso base & 1250 & 18.4 \\
+                                   & Caso otimizado & 1120 & 15.7 \\
+        \addlinespace
+        \multirow{2}{*}{Sistema B} & Caso base & 1430 & 21.2 \\
+            					   & Caso otimizado & 1285 & 17.9 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Um problema frequente é a utilização de tabelas cuja largura ultrapassa as margens da página. Nestes casos, recomenda-se a utilização do ambiente \verb|tabularx|, que permite definir a largura total da tabela e ajustar automaticamente a largura das colunas do tipo \verb|X|. A Tabela~\ref{tab:tabularxexample} apresenta um exemplo cuja largura é limitada explicitamente a \verb|\textwidth|.
+
+\begin{table}[htb]
+    \caption{Exemplo de uma tabela ajustada à largura útil da página.}
+    \label{tab:tabularxexample}
+    \centering
+    \begin{tabularx}{\textwidth}{l X X}
+        \toprule
+        \tabhead{Método} &
+        \tabhead{Descrição} &
+        \tabhead{Principais características} \\
+        \midrule
+        Método A &
+        Método utilizado para estimar o comportamento do
+        sistema em diferentes condições de funcionamento. &
+        Apresenta reduzido custo computacional e permite
+        uma implementação relativamente simples. \\
+        Método B &
+        Abordagem baseada numa análise mais detalhada do
+        modelo e das restrições consideradas. &
+        Permite representar fenómenos adicionais, embora
+        apresente maior complexidade computacional. \\
+        Método C &
+        Procedimento utilizado para comparar diferentes
+        soluções e avaliar o respetivo desempenho. &
+        Adequado para estudos envolvendo vários critérios
+        de avaliação. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+No ambiente \verb|tabularx|, a utilização de \verb|\begin{tabularx}{\textwidth}{l X X}| garante que a tabela ocupa  no máximo a largura útil do texto. Neste caso, a primeira coluna tem a largura necessária para o seu conteúdo e as duas colunas do tipo \verb|X| dividem automaticamente entre si o espaço restante.
+
+Para fazer referência a tabelas use o comando \verb|\ref{<label>}|, onde \verb|<label>| se refere ao rótulo definido por \verb|\label{<label>}|. Regra geral coloque sempre um til, i.e., \verb|Tabela~\ref{<label>}|, para introduzir um \textit{unbreakable space}. Para tabelas que ocupem várias páginas pode ser utilizado o ambiente \verb|longtable|. Outros ambientes e comandos podem igualmente ser utilizados para construir tabelas mais complexas, desde que sejam respeitadas as regras gerais de formatação do documento.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Algoritmos e excertos de código}
+
+A apresentação de algoritmos na forma de pseudo-código é útil para apresentar uma lógica independente da linguagem em que esta irá ser implementada. Considere o exemplo (Algoritmo~\ref{alg:exemplo}) criado com o \textit{package} \verb|algorithmicx|. 
+
+\begin{algorithm}[hbt!]
+\caption{Exemplo de um algoritmo}
+\label{alg:exemplo}
+\hrulefill
+\begin{algorithmic}[1]
+\State $i \gets 10$
+\If{$i\geq 5$} 
+    \State $i \gets i-1$ 	\label{alg:line:l3}
+\Else
+    \If{$i\leq 3$}
+        \State $i \gets i+2$ \Comment{Isto é um comentário}
+    \EndIf
+\EndIf 
+\end{algorithmic}
+\hrulefill
+\end{algorithm}
+
+Consulte a documentação (\url{https://ctan.org/pkg/algorithmicx}) para a lista completa de comandos disponíveis. É também possível fazer referência a linhas específicas do algoritmo, e.g., ver código da linha~\ref{alg:line:l3}.
+
+Para apresentar excertos de código-fonte na sua dissertação este \textit{template} usa o \gls{pack} \verb|listings|. Tenha em consideração que por omissão as listagens estão definidas como flutuantes. Esta definição implica também que uma listagem não será dividida por ocorrência de uma nova página, pelo que é recomendado que utilize excertos que não excedam uma página. Para mais informações consultar \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}.
+
+O comando \verb|\printlistoflistings|, invocado no ficheiro \path{4_frontmatterlists.tex}, cria a secção ``Listagens'' na sua dissertação. Assim, se não usar listagens na sua dissertação deverá comentar este comando. A Listagem~\ref{lst:examplo1} e a Listagem~\ref{lst:examplo2} são dois exemplos de listagens de código. Analise o conteúdo deste ficheiro para mais detalhes.
+
+\begin{center}
+\begin{minipage}{0.7\linewidth}
+\begin{lstlisting}[language=C, caption=Exemplo simples de C., label=lst:examplo1]
+#include<stdio.h>
+main(){
+	printf("Hello World");
+}
+\end{lstlisting}
+\end{minipage}
+\end{center}
+
+Uma listagem de código também pode ser inserida diretamente de um ficheiro através do comando \verb|\lstinputlisting[<settings>]{<pathtofile>/file.c}|.
+
+\begin{minipage}{0.9\linewidth}
+\begin{lstlisting}[language=Python, caption=Exemplo longo em Python., label=lst:examplo2]
+import numpy as np
+    
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+    
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1) 
+
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+                
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)               
+                VT = np.zeros((n*m,1), int)  
+    return M
+\end{lstlisting}
+\end{minipage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Equações}
+
+Se a sua tese fizer uso de conteúdo matemático, então a opção de usar o \LaTeX{} foi a mais acertada. O livro ``Uma não tão pequena introdução ao \LaTeX{}'' tem informação suficiente para a maioria dos casos de composição matemática, mas para conteúdos mais completos recomenda-se o guia \url{tug.ctan.org/info/short-math-guide/short-math-guide.pdf}. Adicionalmente, uma extensa lista de símbolos pode ser consultada em \url{tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}.
+
+O \LaTeX{} permite a escrita de equações \textit{inline} como $E = mc^{2}$ ou em modo \textit{display}, sendo neste caso automaticamente numeradas. Deverá usar o comando \verb|\label{<label>}| para fazer referência a uma equação~(\ref{eqn:einstein}). O código:
+\newpage
+\begin{verbatim}
+\begin{equation}
+	E = mc^{2} .
+	\label{eqn:einstein}
+\end{equation}
+\end{verbatim}
+
+\noindent produz a famosa equação:
+
+\begin{equation}
+E = mc^{2} .
+\label{eqn:einstein}
+\end{equation}
+
+Para apresentar sistemas de equações recomenda-se o uso do ambiente \code{align}:
+\begin{align}
+	x_1 &= x_2 + x_3\\
+	y_1 + y_2 &= z_1 + z_2
+	\label{eqn:eq2}
+\end{align}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Teoremas}
+
+Teoremas, lemas e corolários devem ser numerados por ordem crescente. O \textit{template} fornece estes ambientes adaptados ao idioma selecionado para o documento em \file{main.tex}. Através do comando \verb|\newtheorem| pode criar ambientes adicionais do mesmo tipo (no ficheiro \file{preamble.tex}). 
+
+\begin{theorem}
+Isto é um exemplo da aplicação do ambiente \code{theorem}. Os teoremas são numerados por ordem crescente, iniciando em 1.
+\end{theorem}
+
+\begin{corollary}
+Isto é um exemplo da aplicação do ambiente \code{corollary}. Os corolários são numerados por ordem crescente, iniciando em 1.
+\end{corollary}
+
+\begin{lemma}
+Isto é um exemplo da aplicação do ambiente \code{lemma}. Os lemas são numerados por ordem crescente, iniciando em 1.
+\end{lemma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+\section{Notas Adicionais}
+
+\textbf{Boa sorte!}
+

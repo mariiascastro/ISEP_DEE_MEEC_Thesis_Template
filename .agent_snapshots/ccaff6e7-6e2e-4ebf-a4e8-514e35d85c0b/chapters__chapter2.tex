@@ -1,0 +1,734 @@
+% Chapter 2
+
+\chapter{Revisão bibliográfica}	%The main chapter title
+\chaptermark{O \textit{Template}}	%Short version for page header. Comment if not needed
+\label{Chapter2}	%For referencing the chapter elsewhere, use \ref{Chapter2} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Papel das BESS}
+\label{sec:Ch2.1}
+
+A crescente integração de fontes renováveis na rede elétrica aumenta a necessidade de flexibilidade do sistema energético. Os Sistemas de Armazenamento de Energia (BESS, \textit{Battery Energy Storage System}) assumem um elemento fundamental na transição energética, pois permitem desfasar no tempo a produção e consumo, estabilizar a rede elétrica e aumentar o aproveitamento da energia proveniente de energias renováveis \cite{enel_bess} \cite{ Shamarova2022}. Hesse \cite{ Hesse2017} caracterizam este sistema como vantajoso no que toca à velocidade de resposta, eficiência, baixos valores de autodescarga e à estabilidade permitida através da construção modular \cite{ Hesse2017}.
+
+A evolução deste tipo de equipamentos tem reduzido os custos, que se tornam cada vez mais competitivos, e representa uma solução atrativa para diminuir o consumo e custo da energia proveniente da rede e tem contribuído para a diminuição ativa da descarbonização \cite{enel_bess} \cite{ Shamarova2022}. Apesar das vantagens da BESS, a literatura clarifica que estes sistemas raramente alcançam retornos económicos positivos sem incentivos financeiros, acumulação de receitas, estruturas tarifas favoráveis e sistemas complementares, como sistemas fotovoltaicos \cite{ Dratsas2022}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tecnologias de armazenamento }
+\label{sec:Ch2.1.1}
+
+As tecnologias de armazenamento de energia são, normalmente, classificadas de acordo com a forma como a energia é armazenada: mecânica, eletroquímica, eletromagnética, química e térmica \cite{ Balwani2021} \cite{Mahlia2014}.  A escolha da tecnologia para cada caso deve basear-se em critérios como as densidades de energia e de potência, a duração da descarga, a eficiência de ciclo completo, a vida útil, o tempo de resposta, o custo, o grau de maturidade e as restrições de localização \cite{Mahlia2014} \cite{Luo2015}. A Tabela~\ref{tab:comparacao_tecnologias_armazenamento} organiza, por tecnologia, os diferentes métodos de armazenamento de energia.
+
+
+
+\begin{table}[htbp]
+    \centering
+    \caption{Comparação das principais tecnologias de armazenamento de energia}
+    \label{tab:comparacao_tecnologias_armazenamento}
+
+    \footnotesize
+    \renewcommand{\arraystretch}{1.3}
+    \setlength{\tabcolsep}{3pt}
+    \sloppy
+    
+    \begin{tabularx}{\textwidth}{
+        |>{\centering\arraybackslash}p{2.1cm}
+        |>{\centering\arraybackslash}p{1.8cm}
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X|}
+        
+        \hline
+        \textbf{Tecnologia} &
+        \textbf{Tipo} &
+        \textbf{Pontos fortes} &
+        \textbf{Limitações} &
+        \textbf{Aplicações adequadas} \\
+        \hline
+
+        Bombagem hidroelétrica (PHS) &
+        Mecânica &
+        Sistema mais implementado a nível mundial &
+        Restrições geográficas &
+        Armazenamento de grande escala \\
+        \hline
+
+        Ar comprimido (CAES) &
+        Mecânica &
+        -- &
+        Restrições de localização semelhantes às da PHS; eficiência de ciclo inferior &
+        Grande escala \\
+        \hline
+
+        Volantes de inércia (FESS) &
+        Mecânica &
+        Resposta muito rápida; elevado número de ciclos &
+        Duração de descarga curta &
+        Qualidade de energia e regulação de frequência \\
+        \hline
+
+        Supercon\-densadores &
+        Eletromag\-nética &
+        Elevada densidade de potência &
+        Descarga curta; autodescarga significativa &
+        Resposta rápida: regulação de frequência e apoio à tensão \\
+        \hline
+
+        SMES &
+        Eletromag\-nética &
+        Resposta rápida &
+        -- &
+        Resposta rápida: regulação de frequência e apoio à tensão \\
+        \hline
+
+        Hidrogénio e células de combustível &
+        Química &
+        Armazenamento sazonal ou de longa duração &
+        Eficiência global baixa; sistemas complexos &
+        Longa duração \\
+        \hline
+
+        Armazenamento térmico &
+        Térmica &
+        Armazenamento sazonal ou de longa duração &
+        Eficiência global baixa; sistemas complexos &
+        Longa duração \\
+        \hline
+
+        Baterias (BESS) &
+        Eletroquí\-mica &
+        Elevada densidade de energia; resposta rápida; modulares e escaláveis; instalação junto ao ponto de consumo; maturidade tecnológica &
+        Custo por kWh e degradação &
+        Flutuações de potência a curto prazo; deslocamento temporal de energia \\
+        \hline
+
+    \end{tabularx}
+\end{table}
+
+Os sistemas mecânicos incluem o armazenamento hidroelétricas por bombeamento (PHS, \textit{Pumped Hydro Storage}), que se trata do sistema mais implementado a nível mundial, mas apresenta restrições geográficas. Existe o armazenamento de energia por ar comprimido (CAES, \textit{Compressed Air Energy Storage}), apresenta limitações relacionadas com a localização geográfica semelhantes, e apresenta uma eficiência de ciclo inferior \cite{Mahlia2014}\cite{Salkuti2024}. Por outro lado, os volantes de inércia (FESS, \textit{Flywheel Energy Systems})oferecem uma resposta muito rápida e um elevado número de ciclos de carga e descarga, mas a duração de descarga é curta, assim sendo, são mais adequados para serviços de qualidade de energia e regulação de frequência \cite{ Xiaojun2021}.
+
+Comparando as tecnologias eletromagnéticas, nomeadamente os supercondensadores e os sistemas de armazenamento de energia magnética supercondutora (SMES, \textit{Superconducting Magnetic Energy Storage}). Os supercondensadores apresentam uma elevada densidade de potência, mas uma duração de descarga mais curta e uma autodescarga significativa. Estes dois sistemas estão mais associados com aplicações de resposta rápida, como regulação de frequência e apoio à tensão. Por outro lado, o armazenamento de hidrogénio com pilhas de combustão e o armazenamento térmico são mais adequados para o armazenamento sazonal ou de longa duração, mas apresentam uma eficiência global mais baixa e uma complexidade dos sistemas mais elevada \cite{Mahlia2014}\cite{Salkuti2024}.
+
+Para o armazenamento eletroquímico, como as BESS, apresentam uma elevada densidade energética e resposta rápida, o que se adequa a um cenário com flutuações de potência a curto prazo. Este tipo de sistemas também apresentam uma composição modular e escalável, podem ser instalados perto do ponto de consumo sem requisitos específicos, apresentam uma maior maturidade tecnológica e permitem uma maior redução dos custos entre as opções não mecânicas \cite{Salkuti2024}\cite{ Areola2025}. 
+
+Considerando a escala e os objetivos deste projeto, nomeadamente o armazenamento do excedente fotovoltaico para utilização num período mais vantajoso, e consequentemente a diminuição de importações da rede, a literatura sustenta a escolha da BESS. As PHS e o CAES não são adequadas pelas restrições de escala e de localização. Os volantes de inércia e os supercondenadores não proporcionam a duração de descarga necessária. O armazenamento térmico e o hidrogénio acrescentam complexidade e reduzem a eficiência da aplicação. Estes argumentos baseados na literatura. As BESS, combinam facilidade de instalação em paralelo com sistemas fotovoltaicos, flexibilidade, tempos de resposta e escalabilidade. 
+
+\subsubsection{Químicas de iões de lítio}
+\label{sec:Ch2.1.1.1}
+
+Dentro das BESS eletroquímicas, a escolha da química da célula também condiciona o desempenho e o envelhecimento. \textcite{ Hesse2017} apresentam quatro químicas diferentes que são utilizadas frequentemente em aplicações, óxido níquel-manganês-cobalto (NMC, \textit{Nickel-Manganese-Cobalt}) óxido de níquel cobalto alumínio, (NCA, \textit{Nickel-Cobalt-Aluminum-Oxide}) fosfato de lítio ferro (LFP, \textit{Lithium-Iron-Phosphate}), e uma alternativa com ânodo de titânio de lítio (LTO, \textit{Lithium- Titanate-Oxide}). Para sistemas estacionários, a densidade energética e a potência de pico são menos importantes do que aplicações automóveis. São mais importantes a energia contida, a segurança e a degradação \cite{ Hesse2017}. A tabela 2, apresenta as características principais das químicas de iões de lítio. 
+
+
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\textwidth}{
+|>{\centering\arraybackslash}p{4cm}
+|>{\centering\arraybackslash}X|}
+\hline
+\textbf{Química} & \textbf{Características principais} \\
+\hline
+
+NMC (níquel-manganês-cobalto) &
+Equilíbrio entre segurança, durabilidade e densidade de energia, com custo de material competitivo. Química mais usada em aplicações automóveis e portáteis. \\
+\hline
+
+NCA (níquel-cobalto-alumínio) &
+Densidade de energia gravimétrica muito elevada (mais de 250 Wh/kg em células de qualidade automóvel). Adequada sobretudo em topologias com várias células em paralelo. \\
+\hline
+
+LFP (fosfato de ferro e lítio) &
+Tensão de célula inferior, com cerca de 20\% menos energia específica. Apresenta segurança e menos envelhecimento relativo. Tem curva de tensão em circuito aberto muito plana (variação até 100 mV entre 10 e 90\% de SoC), o que dificulta a estimação do SoC, o balanceamento e o controlo pelo EMS. \\
+\hline
+
+LTO (ânodo de titanato de lítio) &
+Vida em ciclos e capacidade de potência elevada, maior segurança e menor risco de deposição de lítio. Apresenta menor tensão e densidade de energia, custando por kWh mais elevado e poucas células comerciais. \\
+\hline
+
+\end{tabularx}
+\caption{Comparação das principais químicas de baterias de iões de lítio.}
+\label{tab:quimicas_baterias}
+\end{table}
+
+A partir dos dados apresentados no artigo \cite{ Hesse2017} baseado em projetos reais, mais de 75\% dos projetos com PV-BESS usam tecnologias NMC, NCA ou LFP. Apesar disto, os valores e opiniões quanto à tecnologia que deve ser escolhida diferem bastante devido à grande variedade de químicas e os procedimentos de medição escolhidos \cite{ Hesse2017}.  
+
+
+\subsection{BESS e princípios de funcionamento}
+\label{sec:Ch2.1.3}
+
+Os sistemas de armazenamento de energia em baterias são instalações nas quais as baterias, geralmente agregadas, armazenam a eletricidade proveniente da instalação \cite{enel_bess}. Funcionam através de uma hierarquia em camadas de armazenamento eletroquímico, eletrónica de potência e hardware de controlo em níveis. \textcite{ Hesse2017} agrupa os componentes em três blocos que são os componentes das baterias, componentes de ligação à rede e componentes de operação do sistema.
+
+O bloco de armazenamento começa nas células. Estas são ligadas em paralelo, para aumentar a capacidade, e em série, para somar tensões. Nos BESS estacionários, grupos de uma ou várias células em paralelo ligam-se em série até uma tensão de módulo habitualmente não superior a 60 V, e vários módulos são depois associados em série-paralelo, em racks, para atingir a capacidade e a tensão exigidas pela eletrónica de potência \cite{ KWABENAAKYEREMEH2026}\cite{ Khalid2021}\cite{ Hesse2017}. O correto funcionamento do BESS exige todos os componentes seguintes em operação \cite{Tycorun2025 }:
+-O conjunto de baterias que, são montadas em módulos e racks, em série e em paralelo, como descrito anteriormente.
+
+- O Sistema de Gestão de Bateria (BMS, \textit{BMS- Battery Managment System}) recolhe continuamente dados de telemetria relativos à proteção das células e racks de diferenças de tensão, corrente e temperatura. O BMS também é responsável pelo balanceamento de células e proteger a bateria contra sobrecarga, descargas excessivas, sobrecorrentes, sobretemperatura, ou seja, todo o tipo de monitorização a nível da bateria. Esta monitorização contínua garante o equilíbrio das células e calcula o estado da carga (SoC, \textit{State of Charge}) e o estado de saúde (SoH, \textit{State of Health}) \cite{ KWABENAAKYEREMEH2026}\cite{ Khalid2021}\cite{ MARCOSTECCA2020}. Este sistema também é responsável pelo gerenciamento da carga e descarga da bateria \cite{Tycorun2025 }.  A investigação em BMS é sobretudo dirigida ao setor automóvel, embora muitos conceitos sejam transferíveis \cite{ Hesse2017}. 
+
+-O sistema de Gerenciamento Térmico (TMS, \textit{Thermal Management System}) mantém a temperatura na gama de funcionamento. Trata-se de um sistema distinto do BMS. 
+
+-O sistema de conversão de potência (PCS, \textit{Power Conversion System}) é um conversor bidirecional que, na carga, converte a corrente alternada (CA) da instalação, venha da rede ou de fontes renováveis, em corrente continua (CC) para armazenamento eletroquímico e, na descarga, funciona no sentido inverso, fornecendo energia CA \cite{ KWABENAAKYEREMEH2026}\cite{ Khalid2021}\cite{Tycorun2025 }. As perdas do PCS entram na eficiência do sistema medido em CA. 
+
+-O transformador que adapta à tensão do sistema à do ponto de ligação à rede, mas é opcional quando os níveis de tensão coincidem \cite{Tycorun2025 }. 
+
+-O Sistema de Gestão de Energia (EMS, \textit{Energy Management System}) é responsável pelo controlo do fluxo de potência a nível da instalação elétrica. Através de ferramentas de software e hardware otimiza a distribuição de energia, processa os dados fornecidos pela BMS e opera de acordo com os fatores apresentados pela instalação \cite{ MARCOSTECCA2020}.
+
+-Os equipamentos auxiliares incluem o sistema de aquecimento, ventilação e ar condicionado (HVAC, \textit{Heating Ventilation, and Air Conditioning}), o sistema de controlo de supervisão e aquisição de dados (SCADA, \textit{Supervisory Control and Data Acquisition}), interruptores motorizados, sistemas de alarme de incêndio e sistemas de controlo e monitorização. Estes equipamentos garantem as condições de funcionamento adequadas para a BESS funcionar corretamente. O controlador lógico programável (PLC, \textit{Programmable Logic Controller}) dedica-se à coordenação do BESS e à regulação precisa dos fluxos de energia com a rede elétrica.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{REF59_3.png}
+    \caption{Componentes e estrutura de um sistema BESS de escala de serviço.}
+    \label{fig:bess_estrutura}
+\end{figure}
+
+
+\subsection{Topologias de acoplamento PV-BESS}
+\label{sec:Ch2.1.4}
+
+Quando a bateria está associada a um sistema fotovoltaico, a topologia de ligação pode influenciar a eficiência e o custo. \textcite{ Hesse2017} descreve três soluções habituais e, sistemas residenciais: 
+-Acoplamento em CA: a bateria liga-se, através de um conversor CC/CC, ao seu próprio inversor/retificador, e o inversor fotovoltaico mantém-se independente. É mais fácil de instalar num sistema fotovoltaico já existente. 
+-Acoplamento em barramento CC: o conversor da bateria liga-se ao barramento CC entre o rastreamento do ponto de máxima potência (MPPT, \textit{Maximum Power Point Tracking}) e o inversor da rede. 
+-Acoplamento pelo MPPT (acoplamento ao gerador): a bateria liga-se através do conversor MPPT. Exige comunicação rápida e precisa entre a bateria e a ligação à rede.
+As duas soluções CC, normalmente, não se adaptam a sistemas exigentes, mas podem ser mais económicas em instalações novas, por precisarem apenas de um conversor CC/CA \cite{ Hesse2017}.
+
+\subsection{Gestão Térmica }
+\label{sec:Ch2.1.5}
+
+A temperatura é um dos fatores que apresentam uma grande influência no funcionamento e envelhecimento das células. Diferentes temperaturas dentro de um pack pode causar correntes desequilibradas e maior envelhecimento \cite{ Hesse2017}. Distinguem-se dois níveis, a gestão térmica da bateria (B-TMS, \textit{Battery Thermal Management System}) que controla a temperatura das células segundo valores absolutos, e a gestão térmica do sistema (S-TMS, \textit{System Thermal Management System}) que controla as condições do compartimento e atua como uma barreira entre o ambiente e sistema. Num contexto residencial PV-BESS, maioritariamente, é apenas usado arrefecimento passivo por ar, enquanto nos de maior escala, a base é o ar condicionado ativo \cite{ Hesse2017}. O S-TMS funciona durante todo o ano e, se se encontrar mal ajustado, pode afetar bastante o consumo energético do sistema. 
+
+\subsection{Parâmetros e métricas da BESS}
+\label{sec:Ch2.1.5}
+
+A avaliação de um sistema de armazenamento de energia em baterias necessita de um acompanhamento de diversos parâmetros multidimensionais, que garantam o correto funcionamento do sistema. Esta avaliação pode ser expressa por três categorias essenciais e interligadas: (i) capacidade e desempenho, (ii) estado de operação e (iii) envelhecimento \cite{Nazaralizadeh2024}\cite{FEMP2023 }.
+
+\subsubsection{Capacidade e desempenho}
+\label{sec:Ch2.1.5.1}
+
+A capacidade nominal $C_n$ de uma BESS é a carga que uma célula consegue fornecer, desde o estado de carga completa até à tensão de corte em e condições de referência. É um valor dado pelo fornecedor da BESS e medido em Ah. Ao nível do módulo, do rack e do sistema, a grandeza de referência é a energia, em kWh. A tensão nominal $V_n$\ é o nível de tensão indicado pelo fabricante, medido em volts. A tensão de corte $V_c$ é a tensão em que a bateria se encontra
+num estado de carga (SoC, \textit{State of Charge}) de 0\%. A energia nominal, $E_n$, em Wh e trata-se da capacidade nominal multiplicada pela tensão nominal:
+
+
+\[
+E_n = C_n \times V_n
+\]
+
+Estes valores, apesar de serem definidos pelos fabricantes, são influenciados pela idade da bateria, pela taxa de descarga e pela temperatura ambiente \cite{Ashok2022 }. A energia útil, a que pode efetivamente ser utilizada, é inferior à energia nominal porque depende sempre do estado da bateria \cite{INTERNATIONALSTANDARDNORMEINTERNATIONALE2017}. 
+
+A potência nominal, $P_n$,  medida em W, define a potência máxima continua de carga ou descarga, limitada pela bateria e pelo sistema de conversão de potência. 
+O C-rate mede a velocidade a que a bateria pode ser carregada ou descarregada em relação à sua capacidade nominal, e influencia as perdas por polarização interna e os parâmetros do circuito equivalente \cite{ Allahham2022}. As capacidades de de C-rate podem variar bastante entre células e estão frequentemente ligadas à vida em ciclos.  A potência e o C-rate podem ser relacionados da seguinte forma:
+
+\[
+\text{Potência} \approx \text{Capacidade} \times C\text{-rate}
+\]
+
+Quando uma bateria apresenta um C-rate de 1C, significa que a bateria carrega ou descarrega totalmente a sua capacidade numa hora, enquanto uma BESS com 0,5C significa que o mesmo processo demora duas horas \cite{TLS }.  Neste tipo de sistemas os C-rate costumam variar entre 0,25C e 2C, mas costumam expressar outros valores \cite{ Power }.
+O indicador de eficiência d ciclo completo (RTE, \textit{Round Trip Efficiency}) refere-se à relação entre a energia de saída e a energia de entrada num ciclo completo de carga e descarga. Este indicador reflete o impacto das perdas eletroquímicas, de conversão de energia e dos subsistemas auxiliares e representa a eficiência da conversão e transmissão de energia do sistema \cite{ Kyeremeh2026}:
+
+
+\[
+\eta = \frac{E_{\text{discharge}}}{E_{\text{charge}}} \times 100\%
+\]
+
+Onde $E_discharge$é a energia total descarregada e $E_charge$ é a energia total carregada durante um período completo \cite{ Kyeremeh2026}. A distinção entre CA e CC que pode não ser considerada desprezável. O RTE em CC é medido nos terminais da bateria e representa as perdas óhmicas e eletroquímicas nas células e módulos. Por outro lado, o RTE em CA é medido na interligação com a rede e inclui as perdas PCS e as perdas dos auxiliares, como a gestão térmica. 
+Idealmente, esta métrica traduz um sistema mais eficiente, quanto maior próximo o valor estiver dos 100\%, no entanto, é mais frequente em sistemas com baterias de iões de lítio este indicador variar entre 80\% e 97,5\% \cite{ Lin2023} . O artigo \cite{ Kyeremeh2026} monstra dados de campo de uma rede em que RTE em CC se mantém entre 95\% e 97\%, enquanto a RTE em CA se situa entre 87\% a 90\%. Em contrapartida, existem estudos que apontam para valores inferiores, compreendidos entre 65\% a 70\%, consoante a tecnologia e contexto utilizado \cite{ Safarzadeh2026}\cite{ Kyeremeh2026}.
+A autodescarga da bateria representa a perda gradual da carga armazenada na ausência de uma carga elétrica externa. Ao contrário da descarga normal, que ocorre quando a bateria alimenta um dispositivo, a autodescarga resulta de reações eletroquímicas internas e de processos que ocorrem no interior da célula \cite{ BetterTechnologyGroupLimited2026}.
+
+\subsubsection{Estados de operação}
+\label{sec:Ch2.1.5.2}
+
+O estado de carga (SoC, \textit{State of Charge}) representam a percentagem restante de energia utilizável ainda disponível na bateria. É a relação entre a carga restante $Q_remain$ e a capacidade de referência $Q_rated$:
+
+
+\[
+SoC = \frac{Q_{\text{remain}}}{Q_{\text{rated}}} \times 100\%
+\]
+
+Segundo \textcite{ Zhao2023}, usa a capacidade nominal como referência, mas outros autores usam a capacidade máxima atual, o que faz o SoC voltar a atingir 100 \% numa bateria envelhecida. Os intervalos de estado de carga são normalmente compreendidos entre 10\% e 90\% para limitar a degradação e estender a vida útil da bateria \cite{ Safarzadeh2026}. A monitorização deste parâmetro evita a sobrecarga e a descarga profunda das células em perfis de operação dinâmicos.
+A integração em ampere-hora (método de integração da corrente ou método de contagem de Coulomb) estima o SoC da bateria através da carga e descarga acumuladas. Este é um do método mais fiável e permite estimar dinamicamente o SoC da bateria, logo é geralmente utilizado em aplicações reais \cite{ Zhao2023}:
+
+
+\[
+SoC = SoC_0 - \frac{1}{C_N} \int_0^t \eta I \, dt
+\]
+
+Em que $SoC_0$ é o SoC inicial, $C_n$ é a capacidade nominal, $I$ é a corrente e $\eta$ é o fator de eficiência. 
+A profundidade de descarga (DoD, Depth of Discharge) indica a percentagem da bateria que é descarregada em relação à sua capacidade total. Este indicador é o complemento do SoC, logo é possível calcular o DoD da seguinte forma \cite{ Zhao2023}:
+
+
+\[
+DoD = 1 - SoC
+\]
+
+Segundo a literatura, não é recomendável descarregar totalmente a bateria, pois pode danificar o sistema \cite{ Zhao2023}. Na literatura de envelhecimento, porém, a profundidade de descarga ou de ciclo refere-se à amplitude de cada ciclo, e é essa que entra nos modelos de degradação cíclica. 
+
+
+\subsubsection{Envelhecimento e vida útil}
+\label{sec:Ch2.1.5.3}
+
+O estado de saúde (SoH, \textit{State of Health}) quantifica a evolução da degradação, que se traduz em perda de capacidade e em aumento da resistência interna (esta última associada à perda de potência de pico) \cite{ Shamarova2022}. Em termos de capacidade, compara a capacidade medida atual com a nominal \cite{ Hesse2017}: 
+
+
+\[
+SoH_{cap}(t) = \frac{C_{meas}^{nom}}{C_{nom}}
+\]
+
+O SoH serve de base para estimar a vida útil restante, e quanto menor o SoH, menor a energia utilizável da bateria. As taxas de degradação das baterias variam consoante a utilização, no estudo \cite{Andreotti2026 } um sistema perdeu cerca de 1,37\% de capacidade nominal ao efetuar 365 ciclos completos num ano e perder aproximadamente o mesmo nos dois anos consecutivos. Por outro lado, outro estudo atingiu uma perda de 4,57\% ao longo de 23 meses e 490 ciclos completos \cite{Andreotti2026 }. O estudo \cite{Rotas2026 } analisou 1000 dias de funcionamento com dois perfis: num perfil normal o SoH desceu para 95,2\% e num perfil agressivo, com ciclos mais profundos e frequentes, para 93,5\%. A degradação não é linear no início e fim da vida, por este motivo é que modelos simplistas facilmente induzem em erro. 
+
+O fim da vida útil (EOL, \textit{End of Life}) representa o instante em que a bateria deixa de cumprir o desempenho exigido pela aplicação. Não significa que a bateria se torna inutilizável, mas que ultrapassou um limiar definido previamente e ligado ao SoH. A literatura indica a perda de 20\% da capacidade (SoH de 80\%) como critério habitual \cite{ Wu2022}.
+A vida útil remanescente (RUL, \textit{Remaining Useful Life}) é o tempo ou número de ciclos que faltam até o SoH atingir o limiar de EOL. A monitorização deste parâmetro permite prever o início de trajetórias de degradação acentuadas e não lineares \cite{Nazaralizadeh2024}. 
+Um ciclo representa uma sequência completa de carga e descarga. Numa BESS associado a um sistema fotovoltaico, a bateria raramente completa ciclos completos, carrega com o excedente solar e descarrega quando necessário, logo, as amplitudes variam de dia para dia \cite{ Mishra2020}. Por isso, a literatura recorre a ciclos equivalentes completos por ano para comparar estratégias de operação \cite{ Azuatalam2019}. 
+A degradação das baterias de iões de lítio resulta de dois regimes principais, o envelhecimento calendário, que ocorre durante os momentos de repouso ou de circuito aberto (sem passagem de corrente), e o envelhecimento cíclico que ocorre devido ao fluxo de corrente durante a carga ou descarga. Numa aproximação simples, as perdas de capacidade somam-se \cite{ Raj2020}\cite{ Hesse2017}. 
+
+
+
+\[
+C_{fade\,tot} \approx C_{fade\,calendar} + C_{fade\,cyclic}
+\]
+
+O envelhecimento ou degradação calendário representa toda a degradação irreversível que avança independentemente dos ciclos e que ocorrem durante os períodos de armazenamento ou de repouso. Ao longo do tempo, ocorrem reações químicas no interior das células da bateria que degradam os materiais ativos nos elétrodos e no eletrólito e ocorre degradação da capacidade. Uma delas é a formação de Interface de Eletrólito Sólido (SEI, \textit{Solid Electrolyte Interphase}) camada que se forma inicial e espontaneamente por decomposição de uma pequena quantidade de eletrólito em contacto com o ânodo e que, não sendo um isolante ideal, cresce lentamente e consome lítio ativo, com perda de capacidade e aumento da resistência \cite{ Hesse2017}\cite{ Yarimca2024}\cite{Asiri2025 }. As temperaturas elevadas são determinantes, no estudo \cite{ Hesse2017}, um aumento de 10 K na temperatura do núcleo da bateria corresponde aproximadamente a duplicar o efeito do envelhecimento calendário. As temperaturas demasiado baixas também podem prejudicar a eficiência e desempenho da bateria. O SoC é outro fator principal pois armazenar baterias com elevados níveis de SoC durante períodos prolongados pode acelerar a degradação \cite{ Yarimca2024}\cite{Asiri2025 }. 
+Já o envelhecimento cíclico resulta da utilização da bateria, ou seja, quando existe passagem de corrente, nas operações de carga e descarga \cite{ Raj2020}. Além do crescimento contínuo da SEI, inclui os efeitos mecânicos da inserção e da extração de lítio \cite{Arif2026 }. Em regimes mais exigentes, sobretudo com baixa temperatura e carga rápida, pode ocorrer a deposição de lítio metálico no ânodo de grafite \cite{ Hesse2017}. Estes problemas provocam fissuras nas partículas dos elétrodos, perda de contacto elétrico e perda de material ativo \cite{Madabattula2026 }. A degradação cíclica depende do DoD, do C-rate, da temperatura e da janela de SoC \cite{ Raj2020}\cite{Madabattula2026 }. \textcite{ Hesse2017} acrescentam que o LFP revela estabilidade de ciclo superior à de outros cátodos de óxido metálico, e que as temperaturas ótimas de repouso e de operação podem ser contraditórias. Uma gama de conforto de cerca de 10 a 30 °C foi identificada para exemplos estacionários, mas depende da tecnologia e da aplicação.
+
+\subsection{Aplicações e serviços de rede}
+\label{sec:Ch2.1.6}
+
+Os sistemas de armazenamento de energia oferecem um conjunto de serviços de rede, nomeadamente a regulação de frequência, o apoio à tensão e a arbitragem energética \cite{ZhaoZ2023 }\cite{ Zhao2023}. Na literatura, estes serviços dividem-se em serviços de curta duração, como o apoio à tensão, a regulação da frequência e o , \textit{black start}, e serviços de longa duração, como o \textit{peak shaving}, o alívio de constrangimentos e a deslocação de energia no tempo \cite{ Prakash2022}. \textcite{ Hesse2017} propuseram, para as baterias de iões de lítio, quatro famílias de aplicações: serviços de sistema, aplicações atrás do contador \textit{(behind-the-meter)}, comércio de energia e apoio à rede local com diferimento de investimento. No entanto, é possível que a mesma bateria acumule mais do que uma aplicação está diretamente relacionada com a otimização técnica, económica e a degradação da bateria \cite{ Zhao2023}.  
+
+
+\subsubsection{Arbitragem energética}
+\label{sec:Ch2.1.6.1}
+
+A arbitragem energética consiste em comprar ou carregar energia enquanto o custo é reduzido, normalmente ocorre durante os períodos noturnos, e vender ou descarregar quando é mais elevado \cite{ZhaoZ2023 }. O valor da arbitragem depende da eficiência do sistema, dos preços da eletricidade, dos custos de transmissão e de outros fatores \cite{ Al-Hallaj2018}. 
+Hou e Bunn, \cite{Hou2024 }, mostram que, na maior parte dos modelos de negócio das baterias, a arbitragem corresponde à aplicação que gera maiores vantagens económicas e serve como referência para com as restantes aplicações. Uma das principais limitações deste tipo de abordagem é que, devido aos custos elevados de aquisição da BESS, a arbitragem isoladamente não recupera estes custos num curto intervalo de tempo, sendo mais vantajosos quando utilizada em paralelo com serviços auxiliares \cite{ Al-Hallaj2018}. 
+Os padrões de preços estão a mudar, \cite{ Hesse2017} explicam que, durante décadas, as oscilações diárias da carga criaram um padrão de arbitragem muito atrativo para a bombagem hidroelétrica, mas o aumento da produção fotovoltaica durante o dia atenuou essas variações e, em alguns casos, criou padrões, como a \textit{duck curve} da Califórnia, com preços baixos ao meio-dia e subida acentuada ao fim da tarde. Estes padrões podem afetar a rentabilidade da arbitragem e exigir armazenamento de resposta mais rápida, e a arbitragem com flutuações de curta duração pode ser viável para baterias de iões de lítio. Como exemplos de mercado, os relatórios da Modo Energy indicam que, na Califórnia, a arbitragem diária representou 72\% das receitas grossistas das baterias em 2024, um aumento considerável comparando com os 64\% em 2023 \cite{Hou2024 }. E, no Texas, 76\% em 2025, comparado com os 25\% no ano anterior. 
+
+\subsubsection{Regulação da rede (frequência e tensão)}
+\label{sec:Ch2.1.6.2}
+
+Apesar das fontes de energia renováveis serem fundamentais para a descarbonização, a sua implementação desafia a fiabilidade e flexibilidade dos sistemas elétricos. A inércia do sistema diminui e a estabilidade da frequência torna-se um problema relevante, pelo que são fundamentais os serviços de controlo de frequência (FCAS, \textit{frequency control ancillary services}) adequados \cite{Garttan2025 }. Os sistemas de armazenamento de energia, como são uma opção de resposta rápida e precisa à procura da instalação, são considerados uma boa forma de manter a estabilidade da rede e representam uma boa opção para FCAS \cite{Garttan2025 }. \textcite{ Hesse2017} indicam que as BESS reagem em escala de milissegundos e que, na compensação de flutuações de muito curta duração, já se mostraram tecnicamente maduras e potencialmente superiores economicamente, à adaptação do despacho de centrais convencionais.
+O estudo \textcite{Zhao2023} dá especial importância, para curta duração, ao apoio à tensão e o black start, que é uma aplicação de reserva que ocorre após um apagão, e tem como principal objetivo restabelecer o funcionamento da rede com base em recursos capazes de arrancar independentemente dela \cite{ Zhao2023}. Segundo \textcite{ Hesse2017}, as baterias de iões de lítio são adequadas ao black start pela elevada potência nominal e pela baixa autodescarga. No apoio à tensão local, muitos países não têm um esquema de remuneração direta, pelo que os operadores de rede equacionam o armazenamento quando o custo de alternativas excede o da BESS.
+
+
+\subsubsection{Peak Shaving }
+\label{sec:Ch2.1.6.3}
+
+Peak Shaving é a redução da potência pedida à rede nas horas de maior consumo, descarregando a bateria nesses períodos. \textcite{ Aimone2018} descreve esta aplicação como tendo os mesmos objetivos que os do deslocamento de carga, mas com uma escala temporal mais curta do que várias horas.  Peak Shaving consiste em nivelar a curva de carga, reduzindo a carga de pico e transferindo-a para um período fora do pico, e as características da BESS tornam-no uma ótima solução \cite{ Prakash2022}. \textcite{ Hesse2017} explicam o interesse para clientes industriais, pois permite pagar em separado a energia consumida e a potência de ponta, o que pode reduzir bastante a fatura ao reduzir o pico. 
+
+\subsubsection{Integração com renováveis }
+\label{sec:Ch2.1.6.4}
+
+Uma das principais utilizações das BESS é absorver os excedentes de produção de energia renovável quando estes ultrapassam a capacidade ou consumo da instalação. Esta energia é libertada quando a produção renovável desce e a procura da instalação não. Podem também atenuar variações rápidas de potência \cite{ Prakash2022}\cite{ Ratshitanga2024}. Para sistemas residenciais, \cite{ Hesse2017}, em 2017 concluem que, com os custos de investimento e de degradação, o aumento do autoconsumo através de BESS só era economicamente viável em regiões com baixa remuneração de injeção e tarifas de retalho elevadas.
+
+
+
+\subsubsection{Backup e resiliência }
+\label{sec:Ch2.1.6.5}
+
+O backup de energia acontece quando existe fornecimento de energia a cargas críticas ou a uma secção de rede, quando a rede principal sofre uma falha, as BESS podem servir como fonte de alimentação.
+Esta funcionalidade assume particular importância em instalações onde a continuidade do serviço é essencial, nomeadamente em hospitais, centros de dados, unidades industriais e outros edifícios que dependem de equipamentos cuja interrupção de funcionamento pode provocar consequências operacionais ou económicas significativas \cite{ Prakash2022}\cite{ Marchgraber2020}. 
+
+\subsubsection{Acumulação de serviços}
+\label{sec:Ch2.1.6.6}
+
+A mesma bateria pode integrar várias aplicações em simultâneo, e a literatura propõe a análise através de perfis de operação \cite{ Zhao2023}. \textcite{ Hesse2017} observam que um sistema dedicado a uma só aplicação tem períodos de inatividade consideráveis, e que combinar aplicações aumenta a utilização e permite somar os lucros. Na maioria dos casos, o aumento de lucro excede o custo da degradação adicional. O desafio está em controlar a bateria para servir várias tarefas em simultâneo e em cumprir as restrições regulatórias quando há vários intervenientes \cite{ Hesse2017}. 
+
+
+\subsection{Dimensionamento, estratégias de despacho e otimização}
+\label{sec:Ch2.1.7}
+
+ Dimensionar uma BESS consiste em definir a energia, expressa em kWh, e a potência, expressa em kW, do sistema de baterias de forma a cumprir os requisitos e objetivos da aplicação e limitando os custos ao menor possível. \textcite{ Hesse2017} identificam o dimensionamento como um critério de otimização do sistema, porque influenciam o investimento inicial, as receitas e eventual substituição das baterias. Esta dependência entre o tamanho e a forma como a bateria é operada é bastante relevante na literatura, e o sistema estar bem ou mal dimensionado é diretamente proporcional com o a estratégia de despacho e o perfil de carga \cite{ Hesse2017}.
+
+
+\subsubsection{Critérios de dimensionamento}
+\label{sec:Ch2.1.7.1}
+
+O mais usado em sistemas fotovoltaicos com armazenamento é o aumento do autoconsumo (SC, \textit{Self-Consumption}) e da autossuficiência (SS, \textit{Self-Sufficiency}). O estudo, \cite{ Luthander2015}, quando abordou autoconsumo em edifícios, concluiu que a maioria dos estudos analisa os sistemas fotovoltaico e bateria em conjunto, e que é possível que o autoconsumo relativo aumente 13\% a 24\% com uma bateria com capacidade de 0,5 a 1 kWh por cada kW de painel fotovoltaico (PV) instalado. Além disto, pode aumentar de 2\% a 15\% com a gestão da procura (DSM, \textit{Demand side management}), quando comparado com o autoconsumo inicial. \textcite{Cillari2021} apresenta dados reais de dois edifícios e concluem que um sistema de armazenamento é fundamental para maximizar o autoconsumo e reduzir custos associados com a energia consumida. Já \cite{Weniger2014 } identifica uma ligação, aumentar a potência, em kW do PV tende a aumentar a autossuficiência, mas a reduzir o autoconsumo relativo, mas referem que a implementação de uma bateria pode resolver este problema. 
+Os indicadores mais comuns para são o valor atual líquido (NPV, \textit{Net Present Value}), a taxa interna de rentabilidade (IRR, \textit{Internal Rate of Return}) o período de retorno e o custo nivelado de energia (LCOE, \textit{Levelized Costo f Energy}). \textcite{ Azuatalam2019} apresentam NPV pela seguinte fórmula: 
+
+
+\[
+NPV = -C_0 + \sum_{n=1}^{N} \frac{C_n}{(1+r)^n}
+\]
+
+Em que $C_0$ é o investimento inicial, $C_n$ representa o fluxo de caixa anual, ou seja, a poupança na fatura energética mais a receita da injeção de energia na rede e $r$ é a taxa de desconto. De forma a comprar tecnologias de armazenamento, utiliza-se o LCOE \cite{ Azuatalam2019}. \textcite{ Jlch2016} mostra que, para a maioria das tecnologias, a energia descarregada e o custo da eletricidade de carga são os fatores mais influentes no LCOS. 
+O dimensionamento é sensível à resolução dos perfis de consumo. Segundo, \textcite{Azuatalam2019} e \textcite{Beck2016 } para um resultado razoavelmente exato em sistemas PV, são necessários dados com periocidade de 15 minutos e a adição de sistemas de armazenamento de energia de forma a atenuar o erro causado. 
+O dimensionamento também deve ter em consideração que a energia utilizável diminui ao longo da vida e das utilizações da bateria.  A estratégia de despacho altera o número de ciclos de vida equivalentes anuais e a vida útil estimada \cite{ Azuatalam2019 }. 
+
+
+
+
+ \subsubsection{Métodos de dimensionamento }
+\label{sec:Ch2.1.7.2}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Critérios de dimensionamento}
+\label{sec:Ch2.1.7.3}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Formatos e Regras}
+\label{sec:Ch2.3}
+
+Uma das coisas mais importantes (e mais difíceis) de manter num documento longo como uma dissertação é a consistência. Assim, usar as seguintes regras e convenções permite produzir um documento técnicamente consistente que segue as regras definidas institucionalmente. Use o código fornecido neste ficheiro como base para a introdução das suas figuras, tabelas e restantes elementos. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Glossário, acrónimos e símbolos}
+
+Para ajudar o candidato a gerir as listas de termos específicos (\gls{gloss}), acrónimos e símbolos, o \textit{template} faz uso do \textit{package} \verb|glossaries|. Este permite, por exemplo, a ordenação alfabética das listas mencionadas e também que os acrónimos sejam descritos pelo menos uma vez no texto. As listas de termos, acrónimos e símbolos são definidas nos ficheiros mencionados na Subsecção~\ref{subsec:Ch2.2.3}. Tenha em consideração a informação presente nos comentários e os exemplos fornecidos, e de forma adicional na documentação do \gls{pack} disponível no endereço \url{ctan.org/pkg/glossaries} ou em \url{en.wikibooks.org/wiki/LaTeX/Glossary}.
+
+No documento, para introduzir os termos definidos no glossário use o comando \verb|\gls{<tag>}|, onde \verb|<tag>| se refere ao identificador do termo definido no ficheiro \verb|0_glossary.tex|. O \textit{package} \verb|glossaries| disponibiliza comandos adicionais que permitem introduzir variações do termo originalmente definido, para tal consulte a documentação.
+
+Para introduzir acrónimos ao longo do texto, o uso mais comum será através do comando \verb|\ac{<tag>}|, onde \verb|<tag>| se refere ao identificador do acrónimo definido no ficheiro \verb|0_acronyms.tex|. A primeira vez que o comando for usado é introduzida a versão completa (e.g., \ac{api}), e nas seguintes apenas será apresentado o acrónimo (e.g., \ac{api}). A Tabela~\ref{tab:acros} resume os principais comandos a ter em consideração. 
+
+\begin{table}[htb]
+	\caption{Principais comandos para introduzir acrónimos.}
+	\label{tab:acros}
+	\centering
+	\begin{tabular}{l l l}
+	\toprule
+	\tabhead{Comando} & \tabhead{} & \tabhead{Resultado} \\
+	\midrule
+		\verb|\ac{usb}| & primeiro uso & \ac{usb}\\
+		\verb|\ac{usb}| & repetição do comando & \ac{usb}\\
+		\verb|\acl{usb}| & força nome completo & \acl{usb}\\
+		\verb|\acs{usb}| & força acrónimo & \acs{usb}\\
+		\verb|\acf{usb}| & força versão completa & \acf{usb}\\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+Adicionalmente, para que um termo ou acrónimo seja apresentado na respetiva lista do documento final, terá que os usar pelo menos uma vez ao longo do texto. O mesmo não se aplica aos símbolos definidos em \verb|front/0_symbols.tex|.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Referências}
+
+O Bib\LaTeX{} é usado para formatar as referências bibliográficas e inserir citações como esta \cite{Gupta97} através do comando \verb|\cite{<Bibtexkey>}|. Alternativamente, para mencionar explicitamente o nome do(s) autor(es) na frase \textcite{Delorme1995}, usa-se o comando \verb|\textcite{<Bibtexkey>}|. As opções adotadas para a \verb|DEEclass| fazem com que as citações no texto sejam apresentadas como números entre parênteses retos. Citações múltiplas são separadas por vírgulas (e.g., \cite{Lipsum2008,Li2000,Candy1992}). Na correspondente secção da dissertação, as referências são ordenadas pela ordem de citação. 
+
+Considere que as citações \cite{W3C2005,ATmega128A2019} devem ser colocadas antes dos sinais de pontuação \cite{Candy1992}, caso haja, como uma vírgula ou um ponto final \cite{IEA2024}. O mesmo se aplica a notas de rodapé\footnote{Como esta nota de rodapé, aqui em baixo.}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Listas}
+
+Listas não numeradas são produzidas pelo ambiente \code{itemize}. Cada entrada da lista deve ser precedida pela sequência de controlo \code{\textbackslash item}. Por outro lado, as listas ordenadas são geradas pelo ambiente \code{enumerate} e cada entrada também deve ser precedida de \code{\textbackslash item}, que irá gerar automaticamente o rótulo dessa entrada. Os dois ambientes podem ser usados de forma encadeada.
+
+\begin{enumerate}
+   \item Primeiro nível lista ordenada
+   \item Primeiro nível lista ordenada
+   \begin{itemize}
+     \item Segundo nível lista não ordenada
+     \begin{itemize}
+       \item Terceiro nível lista não ordenada
+     \end{itemize}      
+     \item Segundo nível lista não ordenada
+     \begin{enumerate}
+       \item Terceiro nível lista ordenada
+       \item Terceiro nível lista ordenada
+     \end{enumerate}    
+   \end{itemize}
+   \item Primeiro nível lista ordenada   
+\end{enumerate} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Figuras}
+
+É desejável que a sua dissertação inclua figuras em quantidade e qualidade por forma a ilustrar as ideias que pretende transmitir. Todos os ficheiros de figuras devem ser colocados no diretório \path{/figures}. Para inserir as figuras no seu documento deve, regra geral, usar o código:
+
+\begin{verbatim}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.8]{cap2_fig1.eps}
+	\caption{Legenda com citação \parencite{Lipsum2008}.}
+	\label{fig:exemplo1}
+\end{figure}
+\end{verbatim}
+
+Este código produz a Figura~\ref{fig:exemplo1}. As figuras podem ser redimensionadas de uma forma absoluta através da opção \code{scale}, ou de forma relativa, e.g., à largura da área de texto da forma: \path{\includegraphics[width=0.5\textwidth]{cap2_fig1.eps}}. Se necessário pode também recorrer a sub-figuras (ver código deste ficheiro), como demonstrado pela Figura~\ref{fig:exemplo2} que contém as sub-figuras~\ref{fig:subfigA} e~\ref{fig:subfigB}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.8]{cap2_fig1.eps}
+	\caption{Legenda com citação \parencite{Lipsum2008}.}
+	\label{fig:exemplo1}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \subcaptionbox{Uma sub-figura\label{fig:subfigA}}{\includegraphics[width=0.45\linewidth]{cap2_fig1.eps}}
+%  \hfill
+  \subcaptionbox{\label{fig:subfigB}}{\includegraphics[width=0.45\linewidth]{cap2_fig1.eps}}
+  \caption[Uma figura com duas sub-figuras.]{Uma figura com duas sub-figuras: (a) com legenda e (b) sem legenda.}
+  \label{fig:exemplo2}
+\end{figure}
+
+Tenha em consideração que nem sempre as figuras irão aparecer no ponto onde escreveu o código, dado que o posicionamento depende do espaço disponível na página. Posicionar as figuras é trabalho para o \LaTeX{} e por isso só se deve preocupar em fazer as imagens, de preferência em formato vetorial (e.g., EPS, PDF). O \LaTeX{} por omissão aceita os formatos PDF, JPG e PNG. As figuras devem ser sempre referidas no texto e devem também ter sempre uma legenda, definida através do comando \verb|\caption{}|. Não esquecer que quando uma figura é obtida de uma referência bibliográfica, i.e., não é da sua autoria, esse facto deve ser mencionado (ver legenda da Figura~\ref{fig:exemplo1}).
+
+Este \textit{template} disponibiliza o comando adicional \verb|\inlinegraphics| que permite inserir figuras na linha de texto. Este é um exemplo \inlinegraphics{Inlinefigureexample.png}. Por vezes uma figura necessita de ser apresentada em \textit{landscape}, onde a Figura~\ref{fig:exemplo3} é um exemplo desta forma de apresentação.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Tabelas}
+
+As tabelas são uma forma importante de apresentação de informação. A Tabela~\ref{tab:basictable} ilustra a aplicação das principais diretrizes a ter em consideração na construção de tabelas:
+
+\begin{enumerate}
+   \item Não usar linhas verticais.
+   \item A legenda é colocada antes da tabela.
+   \item Usar as macros \verb|\toprule|, \verb|\midrule| e \verb|\bottomrule| para criar as linhas horizontais, respetivamente, do topo, meio e fundo da tabela.
+\end{enumerate} 
+
+Considere o seguinte código usado para criar a Tabela~\ref{tab:basictable}:
+
+{\small
+\begin{verbatim}
+\begin{table}
+\caption{Exemplo de uma tabela simples em \LaTeX{}.}
+\label{tab:basictable}
+\centering
+	\begin{tabular}{l c c}
+	\toprule
+	\tabhead{Coluna 1} & \tabhead{Coluna 2} & \tabhead{Coluna 3} \\
+	\midrule
+	Linha 1 & 0.2 & 0.8\\
+	Linha 2 & 0.17 & 0.7\\
+	Linha 3 & 0.24 & 0.75\\
+	Linha 4 & 0.68 & 0.3\\
+	\bottomrule
+\end{tabular}
+\end{table}
+\end{verbatim}
+}
+
+\begin{table}[htb]
+	\caption{Exemplo de uma tabela simples em \LaTeX{}.}
+	\label{tab:basictable}
+	\centering
+	\begin{tabular}{l c c}
+	\toprule
+	\tabhead{Coluna 1} & \tabhead{Coluna 2} & \tabhead{Coluna 3} \\
+	\midrule
+		Linha 1 & 0.2 & 0.8\\
+		Linha 2 & 0.17 & 0.7\\
+		Linha 3 & 0.24 & 0.75\\
+		Linha 4 & 0.68 & 0.3\\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+%%%
+\begin{landscape}
+	\begin{figure}[htbp]
+		\centering
+		\includegraphics[scale=1.8]{cap2_fig1.eps}
+		\caption{Uma figura em \textit{landscape}.}
+		\label{fig:exemplo3}
+	\end{figure}
+\end{landscape}
+%%%
+
+Para tabelas com uma estrutura mais complexa podem ser utilizados os comandos \verb|\multirow| e \verb|\multicolumn|. O primeiro permite que uma célula ocupe várias linhas, enquanto o segundo permite agrupar várias colunas sob uma única célula. A Tabela~\ref{tab:multitable} apresenta um exemplo da utilização combinada destes dois comandos.
+
+\begin{table}[htb]
+    \caption{Exemplo de utilização de \texttt{multirow} e
+    \texttt{multicolumn}.}
+    \label{tab:multitable}
+    \centering
+    \begin{tabular}{l l c c}
+        \toprule
+        \multirow{2}{*}{\tabhead{Sistema}} & \multirow{2}{*}{\tabhead{Cenário}} & \multicolumn{2}{c}{\tabhead{Resultados}}\\
+        \cmidrule(lr){3-4} & & \tabhead{Custo (\$)} & \tabhead{Perdas (kW)}\\
+        \midrule
+        \multirow{2}{*}{Sistema A} & Caso base & 1250 & 18.4 \\
+                                   & Caso otimizado & 1120 & 15.7 \\
+        \addlinespace
+        \multirow{2}{*}{Sistema B} & Caso base & 1430 & 21.2 \\
+            					   & Caso otimizado & 1285 & 17.9 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+Um problema frequente é a utilização de tabelas cuja largura ultrapassa as margens da página. Nestes casos, recomenda-se a utilização do ambiente \verb|tabularx|, que permite definir a largura total da tabela e ajustar automaticamente a largura das colunas do tipo \verb|X|. A Tabela~\ref{tab:tabularxexample} apresenta um exemplo cuja largura é limitada explicitamente a \verb|\textwidth|.
+
+\begin{table}[htb]
+    \caption{Exemplo de uma tabela ajustada à largura útil da página.}
+    \label{tab:tabularxexample}
+    \centering
+    \begin{tabularx}{\textwidth}{l X X}
+        \toprule
+        \tabhead{Método} &
+        \tabhead{Descrição} &
+        \tabhead{Principais características} \\
+        \midrule
+        Método A &
+        Método utilizado para estimar o comportamento do
+        sistema em diferentes condições de funcionamento. &
+        Apresenta reduzido custo computacional e permite
+        uma implementação relativamente simples. \\
+        Método B &
+        Abordagem baseada numa análise mais detalhada do
+        modelo e das restrições consideradas. &
+        Permite representar fenómenos adicionais, embora
+        apresente maior complexidade computacional. \\
+        Método C &
+        Procedimento utilizado para comparar diferentes
+        soluções e avaliar o respetivo desempenho. &
+        Adequado para estudos envolvendo vários critérios
+        de avaliação. \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+No ambiente \verb|tabularx|, a utilização de \verb|\begin{tabularx}{\textwidth}{l X X}| garante que a tabela ocupa  no máximo a largura útil do texto. Neste caso, a primeira coluna tem a largura necessária para o seu conteúdo e as duas colunas do tipo \verb|X| dividem automaticamente entre si o espaço restante.
+
+Para fazer referência a tabelas use o comando \verb|\ref{<label>}|, onde \verb|<label>| se refere ao rótulo definido por \verb|\label{<label>}|. Regra geral coloque sempre um til, i.e., \verb|Tabela~\ref{<label>}|, para introduzir um \textit{unbreakable space}. Para tabelas que ocupem várias páginas pode ser utilizado o ambiente \verb|longtable|. Outros ambientes e comandos podem igualmente ser utilizados para construir tabelas mais complexas, desde que sejam respeitadas as regras gerais de formatação do documento.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Algoritmos e excertos de código}
+
+A apresentação de algoritmos na forma de pseudo-código é útil para apresentar uma lógica independente da linguagem em que esta irá ser implementada. Considere o exemplo (Algoritmo~\ref{alg:exemplo}) criado com o \textit{package} \verb|algorithmicx|. 
+
+\begin{algorithm}[hbt!]
+\caption{Exemplo de um algoritmo}
+\label{alg:exemplo}
+\hrulefill
+\begin{algorithmic}[1]
+\State $i \gets 10$
+\If{$i\geq 5$} 
+    \State $i \gets i-1$ 	\label{alg:line:l3}
+\Else
+    \If{$i\leq 3$}
+        \State $i \gets i+2$ \Comment{Isto é um comentário}
+    \EndIf
+\EndIf 
+\end{algorithmic}
+\hrulefill
+\end{algorithm}
+
+Consulte a documentação (\url{https://ctan.org/pkg/algorithmicx}) para a lista completa de comandos disponíveis. É também possível fazer referência a linhas específicas do algoritmo, e.g., ver código da linha~\ref{alg:line:l3}.
+
+Para apresentar excertos de código-fonte na sua dissertação este \textit{template} usa o \gls{pack} \verb|listings|. Tenha em consideração que por omissão as listagens estão definidas como flutuantes. Esta definição implica também que uma listagem não será dividida por ocorrência de uma nova página, pelo que é recomendado que utilize excertos que não excedam uma página. Para mais informações consultar \url{https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}.
+
+O comando \verb|\printlistoflistings|, invocado no ficheiro \path{4_frontmatterlists.tex}, cria a secção ``Listagens'' na sua dissertação. Assim, se não usar listagens na sua dissertação deverá comentar este comando. A Listagem~\ref{lst:examplo1} e a Listagem~\ref{lst:examplo2} são dois exemplos de listagens de código. Analise o conteúdo deste ficheiro para mais detalhes.
+
+\begin{center}
+\begin{minipage}{0.7\linewidth}
+\begin{lstlisting}[language=C, caption=Exemplo simples de C., label=lst:examplo1]
+#include<stdio.h>
+main(){
+	printf("Hello World");
+}
+\end{lstlisting}
+\end{minipage}
+\end{center}
+
+Uma listagem de código também pode ser inserida diretamente de um ficheiro através do comando \verb|\lstinputlisting[<settings>]{<pathtofile>/file.c}|.
+
+\begin{minipage}{0.9\linewidth}
+\begin{lstlisting}[language=Python, caption=Exemplo longo em Python., label=lst:examplo2]
+import numpy as np
+    
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+    
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+    M2 = np.triu(bitxormatrix(genl2),1) 
+
+    for i in range(m-1):
+        for j in range(i+1, m):
+            [r,c] = np.where(M2 == M1[i,j])
+            for k in range(len(r)):
+                VT[(i)*n + r[k]] = 1;
+                VT[(i)*n + c[k]] = 1;
+                VT[(j)*n + r[k]] = 1;
+                VT[(j)*n + c[k]] = 1;
+                
+                if M is None:
+                    M = np.copy(VT)
+                else:
+                    M = np.concatenate((M, VT), 1)               
+                VT = np.zeros((n*m,1), int)  
+    return M
+\end{lstlisting}
+\end{minipage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Equações}
+
+Se a sua tese fizer uso de conteúdo matemático, então a opção de usar o \LaTeX{} foi a mais acertada. O livro ``Uma não tão pequena introdução ao \LaTeX{}'' tem informação suficiente para a maioria dos casos de composição matemática, mas para conteúdos mais completos recomenda-se o guia \url{tug.ctan.org/info/short-math-guide/short-math-guide.pdf}. Adicionalmente, uma extensa lista de símbolos pode ser consultada em \url{tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}.
+
+O \LaTeX{} permite a escrita de equações \textit{inline} como $E = mc^{2}$ ou em modo \textit{display}, sendo neste caso automaticamente numeradas. Deverá usar o comando \verb|\label{<label>}| para fazer referência a uma equação~(\ref{eqn:einstein}). O código:
+\newpage
+\begin{verbatim}
+\begin{equation}
+	E = mc^{2} .
+	\label{eqn:einstein}
+\end{equation}
+\end{verbatim}
+
+\noindent produz a famosa equação:
+
+\begin{equation}
+E = mc^{2} .
+\label{eqn:einstein}
+\end{equation}
+
+Para apresentar sistemas de equações recomenda-se o uso do ambiente \code{align}:
+\begin{align}
+	x_1 &= x_2 + x_3\\
+	y_1 + y_2 &= z_1 + z_2
+	\label{eqn:eq2}
+\end{align}  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Teoremas}
+
+Teoremas, lemas e corolários devem ser numerados por ordem crescente. O \textit{template} fornece estes ambientes adaptados ao idioma selecionado para o documento em \file{main.tex}. Através do comando \verb|\newtheorem| pode criar ambientes adicionais do mesmo tipo (no ficheiro \file{preamble.tex}). 
+
+\begin{theorem}
+Isto é um exemplo da aplicação do ambiente \code{theorem}. Os teoremas são numerados por ordem crescente, iniciando em 1.
+\end{theorem}
+
+\begin{corollary}
+Isto é um exemplo da aplicação do ambiente \code{corollary}. Os corolários são numerados por ordem crescente, iniciando em 1.
+\end{corollary}
+
+\begin{lemma}
+Isto é um exemplo da aplicação do ambiente \code{lemma}. Os lemas são numerados por ordem crescente, iniciando em 1.
+\end{lemma}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\clearpage
+\section{Notas Adicionais}
+
+\textbf{Boa sorte!}
+
