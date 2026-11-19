@@ -425,64 +425,9 @@ O enquadramento é dado pelo Decreto-Lei n.º 15/2022, de 14 de janeiro, que org
 
 
 
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Equações}
-
-Se a sua tese fizer uso de conteúdo matemático, então a opção de usar o \LaTeX{} foi a mais acertada. O livro ``Uma não tão pequena introdução ao \LaTeX{}'' tem informação suficiente para a maioria dos casos de composição matemática, mas para conteúdos mais completos recomenda-se o guia \url{tug.ctan.org/info/short-math-guide/short-math-guide.pdf}. Adicionalmente, uma extensa lista de símbolos pode ser consultada em \url{tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}.
-
-O \LaTeX{} permite a escrita de equações \textit{inline} como $E = mc^{2}$ ou em modo \textit{display}, sendo neste caso automaticamente numeradas. Deverá usar o comando \verb|\label{<label>}| para fazer referência a uma equação~(\ref{eqn:einstein}). O código:
-\newpage
-\begin{verbatim}
-\begin{equation}
-	E = mc^{2} .
-	\label{eqn:einstein}
-\end{equation}
-\end{verbatim}
-
-\noindent produz a famosa equação:
-
-\begin{equation}
-E = mc^{2} .
-\label{eqn:einstein}
-\end{equation}
-
-Para apresentar sistemas de equações recomenda-se o uso do ambiente \code{align}:
-\begin{align}
-	x_1 &= x_2 + x_3\\
-	y_1 + y_2 &= z_1 + z_2
-	\label{eqn:eq2}
-\end{align}  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection{Teoremas}
-
-Teoremas, lemas e corolários devem ser numerados por ordem crescente. O \textit{template} fornece estes ambientes adaptados ao idioma selecionado para o documento em \file{main.tex}. Através do comando \verb|\newtheorem| pode criar ambientes adicionais do mesmo tipo (no ficheiro \file{preamble.tex}). 
-
-\begin{theorem}
-Isto é um exemplo da aplicação do ambiente \code{theorem}. Os teoremas são numerados por ordem crescente, iniciando em 1.
-\end{theorem}
-
-\begin{corollary}
-Isto é um exemplo da aplicação do ambiente \code{corollary}. Os corolários são numerados por ordem crescente, iniciando em 1.
-\end{corollary}
-
-\begin{lemma}
-Isto é um exemplo da aplicação do ambiente \code{lemma}. Os lemas são numerados por ordem crescente, iniciando em 1.
-\end{lemma}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\clearpage
