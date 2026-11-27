@@ -362,13 +362,13 @@ A mesma bateria pode integrar várias aplicações em simultâneo, e a literatur
 
 
 \subsection{Dimensionamento e otimização de sistemas BESS}
-\label{sec:Ch2.1.7}
+\label{sec:Ch2.4}
 
  Dimensionar uma BESS consiste em definir a energia, expressa em kWh, e a potência, expressa em kW, do sistema de baterias de forma a cumprir os requisitos e objetivos da aplicação e limitando os custos ao menor possível. \textcite{ Hesse2017} identificam o dimensionamento como um critério de otimização do sistema, porque influenciam o investimento inicial, as receitas e eventual substituição das baterias. Esta dependência entre o tamanho e a forma como a bateria é operada é bastante relevante na literatura, e o sistema estar bem ou mal dimensionado é diretamente proporcional com o a estratégia de despacho e o perfil de carga \cite{ Hesse2017}.
 
 
-\subsubsection{Critérios de dimensionamento}
-\label{sec:Ch2.1.7.1}
+\subsubsection{Critérios e restrições de dimensionamento}
+\label{sec:Ch2.4.1}
 
 O mais usado em sistemas fotovoltaicos com armazenamento é o aumento do autoconsumo (SC, \textit{Self-Consumption}) e da autossuficiência (SS, \textit{Self-Sufficiency}). O estudo, \cite{ Luthander2015}, quando abordou autoconsumo em edifícios, concluiu que a maioria dos estudos analisa os sistemas fotovoltaico e bateria em conjunto, e que é possível que o autoconsumo relativo aumente 13\% a 24\% com uma bateria com capacidade de 0,5 a 1 kWh por cada kW de painel fotovoltaico (PV) instalado. Além disto, pode aumentar de 2\% a 15\% com a gestão da procura (DSM, \textit{Demand side management}), quando comparado com o autoconsumo inicial. \textcite{Cillari2021} apresenta dados reais de dois edifícios e concluem que um sistema de armazenamento é fundamental para maximizar o autoconsumo e reduzir custos associados com a energia consumida. Já \cite{Weniger2014} identifica uma ligação, aumentar a potência, em kW do PV tende a aumentar a autossuficiência, mas a reduzir o autoconsumo relativo, mas referem que a implementação de uma bateria pode resolver este problema.
 
@@ -387,8 +387,8 @@ O dimensionamento também deve ter em consideração que a energia utilizável d
 
 
 
- \subsubsection{Métodos de dimensionamento }
-\label{sec:Ch2.1.7.2}
+ \subsubsection{Métodos de simulação e otimização }
+\label{sec:Ch2.4.2}
 
 A literatura divide-se em três níveis de dimensionamento que se distinguem por complexidade:
 
@@ -401,8 +401,8 @@ A literatura divide-se em três níveis de dimensionamento que se distinguem por
 No estudo de \cite{Azuatalam2019}, é apresenta uma limitação comum em muitos estudos, que se trata de a considerar o dimensionamento de uma bateria como um modelo linear, com eficiência constante, pode reduzir a credibilidade do dimensionamento, e sobrestimar o desempenho económico, os autores utilizam uma eficiência de carga/descarga de 91\% e referem à eficiência real depende do SoC, da temperatura e da potência. 
 
 
-\subsubsection{Estratégias de despacho}
-\label{sec:Ch2.1.7.3}
+\subsubsection{Estratégias de carga e descarga}
+\label{sec:Ch2.4.3}
 
 As estratégias de despacho definem quando a bateria carrega e descarrega \cite{Azuatalam2019}. Uma das principais é a heurística por regras, que pretende a maximização do autoconsumo (SCM, \textit{Self-Consumption Maximization}), ou seja, a produção PV primeiro serve a carga, o excedente PV carrega a bateria e a energia que sobra é injetada na rede. Neste caso, a bateria descarrega quando a carga da instalação ultrapassa a produção PV. 
 
